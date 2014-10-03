@@ -663,7 +663,12 @@
 			.wrapper.style4 h6
 			{
 				color: #fff;
+
 			}
+
+                        .wrapper.style4 h3 a {
+                            color: deeppink;
+                        }
 
 			.wrapper.style4 form input[type=text],
 			.wrapper.style4 form input[type=password],
