@@ -810,6 +810,54 @@
 				border-top: solid 0.6em #282828;
 			}
 
+	#nav3
+	{
+
+		text-align: center;
+		position: relative;
+                color: black !important;
+                font-size: 2.1em;
+		width: 100%;
+		cursor: default;
+	}
+
+		#nav3 ul
+		{
+			margin-bottom: 0;
+		}
+
+		#nav3 li
+		{
+			display: inline-block;
+		}
+
+		#nav3 a
+		{
+			position: relative;
+			display: block;
+                        color: black !important;
+			outline: 0;
+		}
+
+			#nav3 a:hover
+			{
+		color: deeppink !important;
+			}
+
+			#nav3 a.active:before
+			{
+				content: '';
+				display: block;
+				position: absolute;
+				bottom: -0.6em;
+				left: 50%;
+				margin-left: -0.75em;
+				border-left: solid 0.75em transparent;
+				border-right: solid 0.75em transparent;
+				border-top: solid 0.6em #282828;
+			}
+
+
 /*********************************************************************************/
 /* Articles                                                                      */
 /*********************************************************************************/
