@@ -96,7 +96,14 @@
 		{
 			text-decoration: none;
 			color: inherit;
+			color: #43bff0 !important;
+
 		}
+
+                h3 a:hover
+                {
+                    color: deeppink !important;
+                }
 
 	h2, h3, h4, h5, h6
 	{
@@ -119,6 +126,8 @@
                 font-style: italic;
                 color: #5e5e5e;
 	}
+
+
 
 	em, i
 	{
