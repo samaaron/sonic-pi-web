@@ -127,6 +127,13 @@
                 color: #5e5e5e;
 	}
 
+        h4
+	{
+		font-weight: 300;
+                font-style: italic;
+                color: #5e5e5e;
+	}
+
 
 
 	em, i
