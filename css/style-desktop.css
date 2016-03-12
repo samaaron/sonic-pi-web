@@ -174,24 +174,24 @@
 /* Articles                                                                      */
 /*********************************************************************************/
 
-	#top
+	#intro
 	{
 		text-align: left;
 	}
 
-		#top .image
+		#intro .image
 		{
 			width: 20em;
 			height: 20em;
 			margin: 0;
 		}
 
-		#top h1
+		#intro h1
 		{
 			margin-top: 0.35em;
 		}
 
-		#top p
+		#intro p
 		{
 			font-size: 1.5em;
 			line-height: 1.75em;

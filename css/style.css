@@ -878,25 +878,25 @@
 /* Articles                                                                      */
 /*********************************************************************************/
 
-	#top
+	#intro
 	{
 	}
 
-		#top .image
+		#intro .image
 		{
 			border-radius: 50%;
 		}
 
-			#top .image img
+			#intro .image img
 			{
 				border-radius: 50%;
 			}
 
-		#top p
+		#intro p
 		{
 		}
 
-			#top p a
+			#intro p a
 			{
 				color: inherit;
 			}

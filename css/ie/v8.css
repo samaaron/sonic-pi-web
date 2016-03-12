@@ -16,8 +16,8 @@
 	input[type="submit"],
 	input[type="reset"],
 	.button,
-	#top .image,
-	#top .image img,
+	#intro .image,
+	#intro .image img,
 	#nav a
 	{
 		position: relative;
@@ -25,7 +25,7 @@
 	}
 
 	/* Section/Article */
-	
+
 		section > .last-child,
 		article > .last-child
 		{
@@ -37,7 +37,7 @@
 		{
 			margin-bottom: 0;
 		}
-		
+
 	/* Box */
 
 		.box
