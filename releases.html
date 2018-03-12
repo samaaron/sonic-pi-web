@@ -1,0 +1,1841 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Sonic Pi - Tutorial</title>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Sonic Pi Tutorial - Learn how to code music." />
+    <meta name="keywords" content="live coding music code programming learn teach tutorial" />
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.scrolly.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script src="js/init.js"></script>
+
+    <link rel="stylesheet" href="css/skel.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/doc-styles.css" type="text/css"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+</head>
+
+
+
+  <body>
+    <div id="listingg">
+<h1 id="history">History</h1>
+<ul>
+  <li><a href="#v3.1.0">v3.1.0 ‘Sauna’, 23rd Jan, 2018</a></li>
+  <li><a href="#v3.0.1">v3.0.1 ‘IOIO’, 27th July, 2017</a></li>
+  <li><a href="#v3.0">v3.0 ‘IO’, 18th July, 2017</a></li>
+  <li><a href="#v2.11.1">v2.11.1 ‘Hack’, 16th Dec, 2016</a></li>
+  <li><a href="#v2.11">v2.11 ‘Time Warp’, 3rd Nov, 2016</a></li>
+  <li><a href="#v2.10">v2.10 ‘Cowbell’, 15th April, 2016</a></li>
+  <li><a href="#v2.9">v2.9 ‘Venster’, 31st Dec, 2015</a></li>
+  <li><a href="#v2.8">v2.8 ‘Karlsruhe’, 20th Nov, 2015</a></li>
+  <li><a href="#v2.7">v2.7 ‘Rerezzed’, 10th Sept, 2015</a></li>
+  <li><a href="#v2.6">v2.6 ‘Algorave’, 30th July, 2015</a></li>
+  <li><a href="#v2.5">v2.5 ‘Craft’, 13th April, 2015</a></li>
+  <li><a href="#v2.4">v2.4 ‘Defrost’, 11th Feb, 2015</a></li>
+  <li><a href="#v2.3">v2.3 ‘Bitcrush’, 28th Jan, 2015</a></li>
+  <li><a href="#v2.2">v2.2 ‘Slicer’, 18th Dec, 2014</a></li>
+  <li><a href="#v2.1.1">v2.1.1 ‘Firewall’, 25th Nov, 2014</a></li>
+  <li><a href="#v2.1">v2.1 ‘Core’, 21st Nov, 2014</a></li>
+  <li><a href="#v2.0">v2.0 ‘Phoenix’, 2nd Sept, 2014</a></li>
+</ul>
+    </div>
+    <div id="contentss">
+  <span class="image fit"><img src="images/logo.png" alt="" /></span>
+<p><a name="v3.1.0"></a></p>
+
+<h1 id="version-310---sauna">Version 3.1.0 - ‘Sauna’</h1>
+<p><em>23rd Jan, 2018</em>
+  <a href="https://github.com/samaaron/sonic-pi/commits/v3.1.0">(view commits)</a></p>
+
+<p>The major feature of this release is that it brings v3 functionality to
+Windows. Windows now supports all the good stuff listed alongside
+<code>v3.0.x</code> including <code>live_audio</code>, <code>midi</code>, <code>osc</code> and much more. See
+<code>v3.0.1</code> and <code>v3.0.0</code> release notes below for more infomation.</p>
+
+<p>Of course, no new release comes without new features, and there are a
+number of additions and improvements on all levels. Firstly, we are
+honoured to include a number of wonderful new samples kindly recorded
+and released into the public domain by our friends Mehackit. If you
+aren’t already aware, Mehackit organise and run creative coding
+workshops all around Finland and Europe and were a core part behind the
+CodeBus Africa project which used Sonic Pi to engage almost 2000 African
+students with creative code. Our favourite of these samples is the new
+<code>:ambi_sauna</code> which has given us the name for this release.</p>
+
+<p>We have added support for Ogg Vorbis encoded audio files <code>.ogg</code> and
+<code>.oga</code>. These are lossy encoders similar to <code>.MP3</code> but free from license
+restrictions. See: https://en.wikipedia.org/wiki/Vorbis</p>
+
+<p>Another notable addition is the increase in translation coverage across
+a number of languages. If you still feel the translation for your
+language could be improved, please do consider joining in the
+crowd-sourced effort here: <a href="https://hosted.weblate.org/projects/sonic-pi">https://hosted.weblate.org/projects/sonic-pi</a>/</p>
+
+<p>We have also included some styling tweaks to the GUI - to make
+it look even cleaner and also work better when projecting code with
+visuals underneath.</p>
+
+<p>Finally, this release also gives me the opportunity to welcome Ethan
+Crawford to the Core Team. He has been a prolific contributor to the
+project over the years and his keen eye for detail has helped polish
+Sonic Pi from the rough stone it once was to the shining gem it is
+today.</p>
+
+<p>Have fun and enjoy the new features - especially you lovely Windows
+users!</p>
+
+<h2 id="breaking-changes">Breaking Changes</h2>
+
+<ul>
+  <li>The synth <code>chip_noise</code> now has standard default envelope opts (<code>sustain:</code> and <code>release:</code> are now 0 and 1 respectively (as opposed to 1 and 0))</li>
+</ul>
+
+<h2 id="new-fns">New Fns</h2>
+
+<ul>
+  <li><code>set_audio_latency!</code> Apply positive or negative timing offset for audio events to allow for any timing differences between OSC/MIDI events caused by external latencies (such as wireless speakers).</li>
+  <li><code>midi_pc</code> for sending MIDI Program Change messages</li>
+</ul>
+
+<h2 id="samples">Samples</h2>
+
+<ul>
+  <li>Add support for Ogg Vorbis encoded audio files <code>.ogg</code> and <code>.oga</code>. </li>
+  <li>Add new samples (kindly recorded and released into the public domain by Mehackit).
+    <ul>
+      <li>new <code>glitch_</code> sample group containing sounds with a glitchy texture.</li>
+      <li>new <code>mehackit_</code> sample group with sounds of old toys</li>
+      <li>new samples: <code>:perc_bell2</code>, <code>:perc_door</code>, <code>:perc_impact1</code>, <code>:perc_impact2</code>, <code>:perc_swoosh</code>, <code>:ambi_sauna</code>, <code>:bd_mehackit</code>, <code>:sn_generic</code>, <code>:loop_3d_printer</code>, <code>:loop_drone_g_97</code>, <code>:loop_electric</code>, <code>:loop_mehackit1</code>, <code>:loop_mehackit2</code>, <code>:loop_perc1</code>, <code>:loop_perc2</code>, <code>:loop_weirdo</code>, </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="gui">GUI</h2>
+
+<ul>
+  <li>Add new in_thread forum to the community listings (and update other entries).</li>
+  <li>Many, many translation additions and improvements for a multitude of
+languages. The tutorial is now available in German, Spanish, French,
+Italian, Japanese, Dutch, Polish, Portuguese, Romanian, and Russian.</li>
+  <li>GUI now lets the user know when the buffer capacity has been exceeded
+on macOS and Linux (Windows behaviour is currently unchanged). This
+capacity limitation will be addressed more thoroughly in a future release.</li>
+</ul>
+
+<h2 id="bugfixes">Bugfixes</h2>
+
+<ul>
+  <li>Stop the internal sample pattern matcher from duplicating matches in some cases.</li>
+  <li>Stop pro icon preference from resetting to ‘off’ when switching from dark to light mode</li>
+</ul>
+
+<h2> Releases </h2>
+
+<table>
+  <thead>
+    <tr>
+      <th align="left"></th>
+      <th align="left"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="left"><strong>Mac</strong></td>
+      <td align="left"></td>
+    </tr>
+    <tr>
+      <td align="left">Link</td>
+      <td align="left"><a href="https://sonic-pi.net/files/releases/v3.1.0/Sonic-Pi-for-Mac-v3.1.0.dmg" rel="nofollow">Sonic-Pi-for-Mac-v3.1.0.dmg</a></td>
+    </tr>
+    <tr>
+      <td align="left">Size</td>
+      <td align="left">85M</td>
+    </tr>
+    <tr>
+      <td align="left">MD5</td>
+      <td align="left"><code>09137b7ad16224ca524d723369608d1d</code></td>
+    </tr>
+    <tr>
+      <td align="left">SHA256</td>
+      <td align="left"><code>d1e232e39f875db717f4efab85362dfaac31cafb9e555b21136d7b12720c9a30</code></td>
+    </tr>
+    <tr>
+      <td align="left"></td>
+      <td align="left"></td>
+    </tr>
+    <tr>
+      <td align="left"></td>
+      <td align="left"></td>
+    </tr>
+    <tr>
+      <td align="left"><strong>Windows Portable</strong></td>
+      <td align="left"></td>
+    </tr>
+    <tr>
+      <td align="left">Link</td>
+      <td align="left"><a href="https://sonic-pi.net/files/releases/v3.1.0/Sonic-Pi-for-Win-Portable-v3.1.0.paf.exe" rel="nofollow">Sonic-Pi-for-Win-Portable-v3.1.0.paf.exe</a></td>
+    </tr>
+    <tr>
+      <td align="left">Size</td>
+      <td align="left">78M</td>
+    </tr>
+    <tr>
+      <td align="left">MD5</td>
+      <td align="left"><code>5c08a058ea63cf44875794335046833c</code></td>
+    </tr>
+    <tr>
+      <td align="left">SHA256</td>
+      <td align="left"><code>afe2eba6213c0823f68d858c6fd7a4fc79f2d6d35062042a31fd2f14ac39d5ed</code></td>
+    </tr>
+    <tr>
+      <td align="left"></td>
+      <td align="left"></td>
+    </tr>
+    <tr>
+      <td align="left"></td>
+      <td align="left"></td>
+    </tr>
+    <tr>
+      <td align="left"><strong>Windows Installer</strong></td>
+      <td align="left"></td>
+    </tr>
+    <tr>
+      <td align="left">Link</td>
+      <td align="left"><a href="https://sonic-pi.net/files/releases/v3.1.0/Sonic-Pi-for-Win-v3.1.0.msi" rel="nofollow">Sonic-Pi-for-Win-v3.1.0.msi</a></td>
+    </tr>
+    <tr>
+      <td align="left">Size</td>
+      <td align="left">129M</td>
+    </tr>
+    <tr>
+      <td align="left">MD5</td>
+      <td align="left"><code>a4cfdbb6c3750aa341cfe42310ac8650</code></td>
+    </tr>
+    <tr>
+      <td align="left">SHA256</td>
+      <td align="left"><code>bb6805d9a5bfb3b220491310518785d87579556740fd9bbfa11b89f30284ed65</code></td>
+      </tr></tbody></table>
+
+
+
+
+
+
+<h1id="version-301---ioio">Version 3.0.1 - ‘IOIO’</h1>
+<p><em>28th July, 2017</em>
+<a href="https://github.com/samaaron/sonic-pi/commits/v3.0.1">(view commits)</a>:</p>
+
+<p>This is a minor release addressing a few bugs and includes a small
+number of modifications.</p>
+
+<h2 id="breaking-changes-1">Breaking Changes</h2>
+<ul>
+  <li>Raspberry Pi only - based on a request from Raspberry Pi we have
+removed the ability to switch between HDMI and headphone output as
+this is now duplicate functionality to what is now available in
+PIXEL. Now, to change audio output, you need to right-click on the
+audio logo in the menu at the top right of the screen.</li>
+</ul>
+
+<h2 id="gui-1">GUI</h2>
+<ul>
+  <li>The IO menu has been slightly tweaked to improve amount of space used.</li>
+</ul>
+
+<h2 id="improvements">Improvements</h2>
+<ul>
+  <li>The Time State system no longer maintains a history of <em>all</em> events -
+instead it retains at least 20 events for each path and beyond that
+culls events 30s in the past.</li>
+</ul>
+
+<h2 id="bugfixes-1">Bugfixes</h2>
+<ul>
+  <li>Fix minor issues with docs (grammar and rendering).</li>
+  <li>Incoming OSC now correctly handles OSC paths which contain capital letters.</li>
+</ul>
+
+
+
+
+<p><a name="v3.0"></a></p>
+
+<h1 id="version-30---io">Version 3.0 - ‘IO’</h1>
+
+<p><em>18th July, 2017</em>
+<a href="https://github.com/samaaron/sonic-pi/commits/v3.0">(view commits)</a>:</p>
+
+<p>This release is our most ambitious to date. The goal is to open up the
+code within Sonic Pi to the outside world. We want you to be able to both
+manipulate the real world to change the code and change the real world
+with the code. Input Output. IO.</p>
+
+<p>We have therefore focussed on getting events and audio in and out of
+Sonic Pi in new ways whilst keeping to our philosophy of simple code,
+live manipulation, and strict, powerful timing. This release introduces
+a number of brand-new components:</p>
+
+<ul>
+  <li><em>Time State</em> - a powerful new time-based deterministic shared memory system</li>
+  <li><em>MIDI</em> - support for input and output of MIDI </li>
+  <li><em>OSC</em> - support for sending and receiving OSC messages on the network.</li>
+  <li><em>Live Audio</em> - for getting multiple streams of audio into Sonic Pi</li>
+  <li><em>Multi-channel audio out</em> - for outputting multiple streams of audio.</li>
+  <li><em>Audio Buffers</em> - for internal recording of audio enabling the creation of loopers.</li>
+</ul>
+
+<p>It’s important to mention that MIDI and OSC output functionality is
+possible due to a new well-timed scheduler. This was built in a
+remarkable programming language called <a href="http://erlang.org">Erlang</a> which
+is now part of the Sonic Pi distribution. We have had the great honour
+of one of Erlang’s co-creators, Joe Armstrong working directly with us
+on the implementation of this scheduler and we look forward immensely to
+continuing to work with him on new functionality.</p>
+
+<p>Another very important part of this release is the addition of Robin
+Newman to the core team. We have always been consistently impressed with
+his fearless and experimental attitude - pushing Sonic Pi into new areas
+with ease. We’re excited that he’s decided to join our core team and
+hope you’re as excited by his future work with us as we are.</p>
+
+<p>Finally, we’re really very excited about what new kinds of instruments
+people will be able to create with this new technology both in the
+classroom and on stage at musical festivals. Sonic Pi has now become a
+fully programmable music studio. Have fun live coding!</p>
+
+<h2 id="breaking-changes-2">Breaking Changes</h2>
+
+<ul>
+  <li>Ring’s <code>.pick</code> now returns 1 element by default. Previously calling <code>.pick</code> on a ring would pick n elements randomly from the ring (including duplicate picks) where n would be the size of the ring. With this change, <code>.pick</code> only returns a single element. This makes it similar to choose.</li>
+</ul>
+
+<h2 id="new-fns-1">New Fns</h2>
+
+<ul>
+  <li><code>midi_*</code> - many new MIDI-specific fns such as <code>midi_note_on</code>, <code>midi_pitch_bend</code>, <code>midi_cc</code>, <code>midi_clock_tick</code>. See new tutorial section for more information. These fns <em>send</em> MIDI messages to connected MIDI devices. Incoming MIDI is received via the new event log.</li>
+  <li><code>with_swing</code> - add swing to successive calls to do/end block.</li>
+  <li><code>get</code> - get a named value from the Time State at the current time. This will return the last value entered. Previous values can be read when within a <code>time_warp</code>. Has full support for OSC </li>
+  <li><code>set</code> - set a named value in the Time State at the current time. Future values can be set when within a <code>time_warp</code>.</li>
+  <li><code>use_real_time</code> - convenience fn for setting the schedule ahead time to 0 for the current thread. Very useful for removing latency from live loops that are working with external cues (such as MIDI or OSC).</li>
+  <li>
+    <p><code>use_midi_defaults</code> - set defaults to be used for all subsequent MIDI calls. Similar to <code>use_synth_defaults</code>. Also available: <code>with_midi_defaults</code>.</p>
+  </li>
+  <li><code>use_osc</code> - set the default hostname and port number for subsequent outgoing OSC messages. See also <code>with_osc</code>.</li>
+  <li><code>osc</code> - send Open Sound Control messages in time with the music to default hostname and port</li>
+  <li><code>osc_send</code> - similar to <code>osc</code> but requires you to specify the hostname and port</li>
+  <li><code>use_sched_ahead_time</code> - set the schedule ahead time specifically for the current thread. Also available - <code>with_sched_ahead_time</code>.</li>
+  <li><code>current_time</code> - return the current logical time.</li>
+  <li><code>assert_error</code> - An assertion to ensure the specified block of code raises the specified error.</li>
+</ul>
+
+<h2 id="synths--fx">Synths &amp; FX</h2>
+
+<ul>
+  <li>
+    <p>New synth <code>live_audio</code> - directly stream audio from your soundcard as a synth.</p>
+  </li>
+  <li>
+    <p>New FX <code>record</code> - enables you to internally record any audio into named buffers. Perfect for building looper systems.</p>
+  </li>
+  <li>New FX <code>:sound_out</code> - stream out audio to a specific output on your sound card. This enables multi-channel audio out.</li>
+  <li>New FX <code>:sound_out_stereo</code> - similar to <code>sound_out</code> but streams out to a pair of consecutive audio card (left and right) output channels.</li>
+  <li>New FX <code>eq</code> - Parametric EQ with three centre freqs - low, mid &amp; high - all with Q values and gain (-1 -&gt; 1). Also has low and high shelves with centre freqs and slope adjustment.</li>
+  <li>New FX <code>tremolo</code> - simple tremolo effect which modulates the volume within the <code>do/end</code> block.</li>
+</ul>
+
+<h2 id="gui-2">GUI</h2>
+
+<ul>
+  <li>New ‘pro’ icon set for performances.</li>
+  <li>New GUI translations for the following languages: (BS) Bosnian, (CA) Catalan, (CS) Czech, (DA) Danish, (EL) Greek, (ET) Estonian, (HI) Hindi, (ID) Indonesian, (KO) Korean, (PT) Portuguese, (TR) Turkish, (ZH) Chinese</li>
+  <li>Added new pane for displaying new cue events (including incoming OSC and MIDI)</li>
+  <li>Added new IO preferences tab for configuring MIDI and network settings.</li>
+  <li>Automatically autocomplete <code>sync</code>, <code>cue</code> and <code>get</code> or <code>set</code></li>
+  <li>Increase width of autocompletion popup.</li>
+</ul>
+
+<h2 id="documentation--examples">Documentation &amp; Examples</h2>
+
+<ul>
+  <li>New articles on additive and subtractive synthesis techniques.</li>
+  <li>New example piece ‘Cloud Beat’ by Pit Noack</li>
+</ul>
+
+<h2 id="improvements-1">Improvements</h2>
+
+<ul>
+  <li>Teach <code>time_warp</code> about input ranges. It now works similar to <code>at</code> in that it can now take two lists of args - times and values - which represent a list of time destinations to be visited in turn.</li>
+  <li>Ensure any unprinted messages are displayed if an exception occurs.</li>
+  <li>Teach <code>range</code> to work as expected with both floats and ints.</li>
+  <li>Teach rings a new chain method - <code>.scale</code> which will return a new ring with all elements multiplied by the scale value.</li>
+  <li>The fn <code>control</code> now returns the node you’re controlling.</li>
+  <li>Add many new chords</li>
+</ul>
+
+<h2 id="bugfixes-2">Bugfixes</h2>
+
+<ul>
+  <li>Fix randomisation aspects of <code>:slicer</code>, <code>:wobble</code> and <code>:panslicer</code> FX (i.e. via the <code>probability:</code> opt).</li>
+  <li>Fix file path drag and drop on Windows to not accidentally prefix path with /.</li>
+  <li>Teach <code>chord_invert</code> and <code>sample</code> to work with floating point args.</li>
+</ul>
+
+<p><a name="v2.11.1"></a></p>
+
+<h1 id="version-2111---hack">Version 2.11.1 - ‘Hack’</h1>
+
+<p><em>16th Dec, 2016</em>
+<a href="https://github.com/samaaron/sonic-pi/commits/v2.11.1">(view commits)</a></p>
+
+<p>This is primarily a maintainance release containing a number of bug
+fixes and minor tweaks. The feature set remains unchanged from <code>v2.11</code>.</p>
+
+<p>One of the core bugs fixed in this release is an issue with the return
+key within some Japanese layouts. Another important change is the
+unification of the font on all platforms to
+<a href="http://sourcefoundry.org/hack/">Hack</a>. This is from the same family as
+Menlo and Bitstream Vera (the previous fonts for Mac and Linux
+respectively) and a dramatic improvement to the Courier font previously
+used for Windows.</p>
+
+<h2 id="gui-3">GUI</h2>
+
+<ul>
+  <li>Move all platforms to the same font -
+<a href="http://sourcefoundry.org/hack/">Hack</a>.</li>
+  <li>Improve initial log information and messages.</li>
+  <li>The scope axes are no longer shown by default for a cleaner look and
+feel.</li>
+</ul>
+
+<h2 id="docs">Docs</h2>
+
+<ul>
+  <li>Add new MagPi article on sample stretching.</li>
+</ul>
+
+<h2 id="bugfixes-3">Bugfixes</h2>
+
+<ul>
+  <li>Ensure <code>chord_invert</code>’s shift value is a whole number - otherwise it
+is possible to get into an infinite recursion.</li>
+  <li>Ensure thread locals have correct default values on <code>clear</code>. When a
+run is created, the thread is given a set of default thread
+locals. Previously <code>clear</code> removed <em>all</em> thread locals. Now, we reset
+the thread locals to the defaults for a brand new thread.</li>
+  <li>Fix line reported on syntax error.</li>
+  <li>Fix unknown synth error message.</li>
+  <li><code>sync</code> can once again handle multiple cues correctly.</li>
+  <li>Fix boot issues for users that don’t have a standard /etc/hosts file
+that contains an entry for localhost.</li>
+  <li><code>sample_duration</code> now handles onsets, slices and sustain.</li>
+  <li>Fix issue with return key not being recognised with Japanese
+keyboards.</li>
+  <li>Fix sporadic flickering of current line on Raspberry Pi.</li>
+  <li>Fix errors in buffer 0 being reported as being from buffer 3.</li>
+  <li>Fix scrollbar background colour on Windows in dark mode.</li>
+  <li>Improve error message reported when required ports are not available
+at boot.</li>
+  <li>Fix issue with calling <code>control</code> on a chord group.  </li>
+  <li>Fix <code>rand</code> and <code>rand_i</code> to honour their arguments.</li>
+</ul>
+
+<p><a name="v2.11"></a></p>
+
+<h1 id="version-211---time-warp">Version 2.11 - ‘Time Warp’</h1>
+
+<p><em>3rd Nov, 2016</em>
+<a href="https://github.com/samaaron/sonic-pi/commits/v2.11.0">(view commits)</a></p>
+
+<p>This release is the biggest and most adventurous release yet. There are
+as many (invisible) modifications and improvements to the internal
+systems as there are new external features that you can see and play
+with. The aim was to create a solid foundation for new and exciting
+features both in this release and in preparation for future releases.</p>
+
+<p>We also open our arms to welcome two new Core Team members - Luis Lloret
+and Adrian Cheater. Both have made generous and substantial
+contributions to this release. Thank-you. Sadly we also say farewell to
+Jeremy Weatherford. Please extend your kind thoughts and gratitude to
+Jeremy for all of his contributions - in particular for turning the
+Windows release from a possibility into a reality. Luckily Luis has
+kindly stepped in to maintain the Windows installer.</p>
+
+<p>The main visible feature is the new scope visualisers. The overall audio
+output can now be visually monitored by one of three wave form
+visualisers. Firstly there is the individual left and right channels,
+next is a single mono scope which is mixed down from the stereo channels
+using RMS and finally there is a Lissajous scope which displays phase
+differences between the left and right channels. Typically the mono
+output will be most useful. Use the preferences pane to hide and show
+each of these scopes. All of them may be viewed at the same time if
+necessary. Thanks to Adrian Cheater for the core work behind this
+feature.</p>
+
+<p>We now have support for multi-channel input (up to 16 channels) via the
+new <code>sound_in*</code> synths for systems that have audio in. This opens up the
+possibility to use Sonic Pi as an FX unit for vocals, guitars and any
+other audio source.</p>
+
+<p>Another exciting new feature is the sample opt <code>onset:</code> - which lets you
+play a specific percussive part of a sample. This uses an automatic
+onset detection algorithm to determine all the points in the sample that
+go from quiet to loud quickly such as a drum, synth or bass hit. For
+example, this allows you to take a complex drum sample and trigger each
+of the individual drums in your own order and to your own timing.</p>
+
+<p>Finally, translations are now crowd-sourced and small or large
+contributions for any language can be made here:
+<code>https://hosted.weblate.org/projects/sonic-pi/</code>. If your language isn’t
+yet available or you would like to improve things, please join in the
+effort. Thanks to Hanno Zulla for making this possible.</p>
+
+<h2 id="breaking-changes-3">Breaking Changes</h2>
+
+<ul>
+  <li><code>sample</code> now supports the opt <code>path:</code> which enables the sample’s path
+to be overridden.</li>
+  <li><code>use_sample_pack</code> is now deprecated and no longer available. Consider
+using the new filter system. See documentation for <code>sample</code> for more
+details.</li>
+  <li><code>current_sample_pack</code> is now deprecated and no longer available.</li>
+  <li><code>inspect</code> has been removed. (Standard printing now calls
+<code>Object#inspect</code> by default)</li>
+  <li><code>load_sample</code> now only loads the first matched sample. <code>load_samples</code>
+now loads all matched samples.</li>
+  <li>Remove SuperCollider server automatic reboot system as it was badly
+conflicting with machines that went into a ‘sleep state’ (for example,
+when a laptop is closed). The fn <code>reboot</code> is still supported and may
+still be triggered manually if required.</li>
+  <li>Calls to <code>play</code>, <code>synth</code> and <code>sample</code> now consume all their arguments
+before testing to see if the synth should be triggered. This ensures
+all declared rands are consumed. This change might therefore
+potentially modify your random stream consumption. Consider using
+<code>rand_back</code> or <code>rand_skip</code> to re-align the stream if necessary.</li>
+  <li>New threads now start with a fresh set of tick counters and a new
+random stream.</li>
+  <li>It is no longer possible to use lambdas as values for synth
+defaults. This is because synth defaults are shared across thread
+boundaries and there is now a new safety system that only allows
+immutable/serialisable values to be used. Unfortunately Ruby has no
+notion of a ‘pure’ function and each lambda captures over its
+environment and therefore may contain free variables pointing to
+mutable data. A replacement system for describing a simple set of pure
+functions is being designed.</li>
+</ul>
+
+<h2 id="new-fns-2">New Fns</h2>
+
+<ul>
+  <li><code>reset</code> - resets the user’s thread locals (such as ticks and rand
+stream index) to the snapshot of the state as recorded at the start of
+the current thread.</li>
+  <li><code>clear</code> - clears all the user’s thread locals to a blank state.</li>
+  <li><code>time_warp</code>- allows whole blocks of code to be shifted forward or
+backwards in time up to the value of <code>current_sched_ahead_time</code>.</li>
+  <li><code>rand_look</code> - generate a random number without consuming a rand by
+looking ahead in the random stream.</li>
+  <li><code>rand_i_look</code> - generate a random integer without consuming a rand by
+looking ahead in the random stream.</li>
+  <li><code>run_file</code> - Runs the contents of file at path as if it was in the
+current buffer.</li>
+  <li><code>run_code</code> - Runs the contents of the specified string as if it was in
+the current buffer.</li>
+  <li><code>Numeric#clamp</code> - max and minimum bound (will clamp self to a value &lt;=
+other and &gt;= -1*other</li>
+  <li><code>set_recording_bit_depth!</code> - set the bit depth for WAV files generated
+by recording the audio. Default is 16 bits, and can now be set to one
+of 8, 16, 24 and 32. Larger bit depths will result in better quality
+audio files but also much larger file sizes for the same duration.</li>
+  <li><code>scsynth_info</code> - obtain information about the running audio synthesis
+server SuperCollider such as the number of available busses and
+buffers.</li>
+</ul>
+
+<h2 id="synths--fx-1">Synths &amp; FX</h2>
+
+<ul>
+  <li>New synth <code>:tech_saws</code> - an implementation of a slightly modified
+supersaw.</li>
+  <li>New synth <code>:sound_in</code> - reads audio from the sound card.</li>
+  <li>New synth <code>:sound_in_stereo</code> - reads audio from the sound card.</li>
+  <li>All FX now have a <code>pre_mix:</code> opt. This allows the audio flow to
+completely bypass a given FX (unlike <code>mix:</code> which passes the audio
+through the FX but modifies the amplitude afterwards).</li>
+  <li>Teach <code>control</code> to manipulate the last triggered synth by default. For
+example, <code>control amp: 3</code> will set the <code>amp:</code> opt of the last
+triggered synth to 3. However, <code>control foo, amp: 3</code> will still
+specifically control synth <code>foo</code>.</li>
+</ul>
+
+<h2 id="samples-1">Samples</h2>
+
+<ul>
+  <li>New opt <code>slice:</code> - lets you play a specific slice of a sample. The
+default number of slices is 16 which may be changed with the
+<code>num_slices:</code> opt. Sample is divided equally into the number of slices
+without regard for audio content and onset points.  The <code>slice:</code> opt
+also works with <code>pick</code> for triggering random sample slices: <code>sample
+:loop_amen, slice: pick</code>.</li>
+  <li>New opt <code>onset:</code> - lets you play a specific percussive part of a
+sample. Uses automatic onset detection to determine the points in the
+sample that go from quiet to loud quickly. Unlike <code>slice:</code>, <code>onset:</code>
+does not necessarily divide a sample into equal onsets - some onsets
+will be smaller or bigger than others and the number of onsets is
+determined by the algorithm and isn’t known in advance.</li>
+</ul>
+
+<h2 id="gui-4">GUI</h2>
+
+<ul>
+  <li>New scope visualisers.</li>
+  <li>Allow files to be dragged from the OS into the text area. This inserts
+the file/folder name as a string.</li>
+  <li>GUI now remembers the last directory you saved or opened a file
+to/from as the default location for next time.</li>
+  <li>Swap align button for a scope button. Given that alignment now happens
+automatically, a specific button seems somewhat redundant. Instead we
+now have a button for toggling the visibility of the scope(s).</li>
+  <li>Loading multiple samples simultaneously is now much faster.</li>
+  <li>Preferences have been slightly re-organised.</li>
+  <li>Preferences now has a Master volume slider which controls Sonic Pi’s
+audio amplitude independently from the system volume.</li>
+  <li>All buttons now display status message + shortcut where available.</li>
+  <li>Enable app transparency slider for Windows.</li>
+  <li>Dark and light theme colours have been slightly polished and unified
+to use the same logic.</li>
+  <li>On multi-screen systems, fullscreen mode now defaults to the app’s
+current screen.</li>
+</ul>
+
+<h2 id="documentation">Documentation</h2>
+
+<ul>
+  <li>Translations are now crowd-sourced. See:
+<code>https://hosted.weblate.org/projects/sonic-pi/</code></li>
+  <li>Improve docstring for <code>live_loop</code>.</li>
+  <li>Add 3 new MagPi articles on amplitude modulation, performance and practice techniques.</li>
+  <li>Add missing <code>pulse_width:</code> opt to flanger FX doc.</li>
+</ul>
+
+<h2 id="improvements-2">Improvements</h2>
+
+<ul>
+  <li>Improve log messages written to <code>~/.sonic-pi/log</code></li>
+  <li>Improve booting on Mac in the case that the audio card’s rate can’t be
+determined.</li>
+  <li>Massively improve boot stability on Windows.</li>
+  <li>Improve error message for <code>play_chord</code> when notes isn’t list like.</li>
+  <li>The number of samples that may be loaded at any one time has been
+increased from 1000 to 4000. However, memory limitations still apply
+(4000 1MB samples will require 4000MB of free system memory)</li>
+  <li><code>pick</code> now returns a lambda if no list is given as the first argument
+(which makes it useful for using with sample’s <code>onset:</code> and <code>slice:</code>
+opts.</li>
+  <li>Audio server is now paused when app is not in use - reducing CPU load
+and battery consumption.</li>
+  <li>Error messages now report names matching the editor tabs such as <code>buffer 0</code>.</li>
+</ul>
+
+<h2 id="bugfixes-4">Bugfixes</h2>
+
+<ul>
+  <li>Decrease duration of <code>:loop_tabla</code> so that it correctly loops. (Length
+reduced to 10.674 seconds).</li>
+  <li>Enforce UTF-8 encoding of all incoming text.</li>
+  <li>Fix <code>:reverb</code> FX’s <code>mix:</code> opt to ensure it’s in the range 0 to 1.</li>
+  <li><code>sample nil</code> now no longer plays a sample - it was incorrectly
+defaulting to the first built-in sample (<code>:ambi_choir</code>)</li>
+  <li><code>pick</code>’s <code>skip:</code> opt now works as expected: <code>pick(5).drop(1) == pick(5, skip: 1)</code></li>
+  <li><code>sample</code> now prints a ‘no sample found’ message with both <code>sample nil</code> and <code>sample []</code> rather than incorrectly playing the first built-in wav file.</li>
+  <li>Limit <code>:piano</code> synth to notes less than 231 as higher values crash the audio server.</li>
+</ul>
+
+<p><a name="v2.10"></a></p>
+
+<h1 id="version-210---cowbell">Version 2.10 - ‘Cowbell’</h1>
+
+<p><em>Friday 15th April, 2016</em>
+<a href="https://github.com/samaaron/sonic-pi/commits/v2.10.0">(view commits)</a></p>
+
+<p><em>“I gotta have more cowbell!”</em> - The Bruce Dickinson</p>
+
+<p>The main feature in this release is the completely new sample system for
+working with large folders of samples. You can now easily index into and
+filter over whole folders of samples with a simple yet powerful filter
+system. This system has been in development for over a year now and has
+been tuned and tweaked over many performances and practice sessions. See
+the documentation and examples for <code>sample</code> as well as the new tutorial
+section 3.7 for details.</p>
+
+<p>We also have a number of exciting new sounds to play with including some
+beautifully sounding chiptune synths, fun retro FX and new drum samples
+including a full tabla set and a cowbell.</p>
+
+<p>Finally, even more boot issues on both OS X and Windows have been
+fixed, making this the most polished and stable release to date.</p>
+
+<p>Now go and get your live code on!</p>
+
+<h2 id="breaking-changes-4">Breaking Changes</h2>
+
+<ul>
+  <li><code>use_sample_pack_as</code> and <code>with_sample_pack_as</code> have been removed.</li>
+  <li>A synth opt value of <code>nil</code> now no longer resolves to 0.0. Instead it
+masks any defaults and ensures the downstream default (for the actual
+synthdef itself) is honoured. This allows you to override any existing
+synth defaults specified via <code>use_synth_defaults</code> for a given synth
+trigger.</li>
+  <li>Default schedule ahead time is now 0.5s on all platforms for
+consistency (except for Raspberry Pi 1 which remains at 1s).</li>
+</ul>
+
+<h2 id="new-fns-3">New Fns</h2>
+
+<ul>
+  <li><code>current_random_seed</code> - Get the current seed value of the random generator.</li>
+  <li><code>set_cent_tuning!</code> - global tuning.</li>
+  <li><code>on</code> - similar to <code>if</code> but behaves the same as the <code>on:</code> opt for
+synths and samples.</li>
+  <li><code>halves</code> - create a ring of successive halves.</li>
+  <li><code>doubles</code> - create a ring of successive doubles.</li>
+  <li><code>pick</code> - similar to shuffle but allows duplicates. You may also
+specify how many items to pick.</li>
+  <li><code>fx_names</code> - create a ring of all available FX.</li>
+</ul>
+
+<h2 id="synths--fx-2">Synths &amp; FX</h2>
+
+<ul>
+  <li>New synth <code>:dtri</code> - detuned triangle waves.</li>
+  <li>New synth <code>:pluck</code> - a lovely synthesised plucked string.</li>
+  <li>New synth <code>:chiplead</code> - retro NES style lead synth.</li>
+  <li>New synth <code>:chipbass</code> - retro NES style bass synth.</li>
+  <li>New synth <code>:chipnoise</code> - retro NES style noise synth.</li>
+  <li>New FX <code>:whammy</code> - low-tech transposition effect similar to the
+Digitech Whammy guitar pedal.</li>
+  <li>New FX <code>:octaver</code> - low-tech octave effect similar to early guitar
+pedals.</li>
+  <li>New FX <code>:vowel</code> - modifies incoming signal to match human vowel
+sounds.</li>
+  <li>New FX <code>:mono</code> - mono effect for summing stereo channels.</li>
+  <li><code>:tanh</code> FX is now more crunchy by default.</li>
+  <li><code>:compressor</code> and <code>:krush</code> FX now correctly honour the <code>mix:</code> opt.</li>
+</ul>
+
+<h2 id="samples-2">Samples</h2>
+
+<ul>
+  <li>Samples in FLAC format (Free Lossless Audio Codec) are now supported!</li>
+  <li>The <code>sample</code> fn gained source and filter pre-opts. You may now specify
+a number of parameters directly before the opts which describe both
+folders containing samples and filters over those folders to allow you
+to easily and quickly work with large sample sets. See Section 3.7 of
+the tutorial for more information.</li>
+  <li>Samplers now have <code>hpf:</code> and <code>lpf:</code> opts. Any <code>cutoff:</code> opts are
+automatically switched to <code>lpf:</code> and any errors will be reported with
+an <code>lpf:</code> prefix.</li>
+  <li>The sampler synth gained a compressor enabled via the <code>compress:</code>
+opt. This means you can now compress any triggered sample directly
+without the need to reach for an FX.</li>
+  <li>Samplers gained the <code>pre_amp:</code> opt which applies the amp at the
+beginning of its internal signal chain. You can use this to overload
+the new compressor.</li>
+  <li>Samplers now have both high pass and low pass filter envelopes which
+behave similarly to the amplitude envelope but control internal hpf
+and lpf FX. These are available via new opts which mirror the standard
+envelope opts but with a <code>hpf_</code> and <code>lpf_</code> prefix (such as
+<code>hpf_attack</code>, <code>lpf_decay_level</code> and friends).</li>
+  <li>Passing a directory path to <code>load_samples</code> will now load all the
+samples within that directory.</li>
+  <li>Passing a directory path to <code>free_samples</code> will now free all the
+loaded samples within that directory.</li>
+  <li>Samples are now loaded asynchronously in a separate thread. This
+therefore doesn’t block the current thread and cause any subsequent
+synth/sample triggers to be late.</li>
+  <li>Sample trigger logging now includes the directory of the contained
+sample.</li>
+  <li>Samples are now reloaded asynchronously after a server reboot (and
+therefore no longer block execution).</li>
+  <li>Add new <code>:tabla_</code> sample group with a range of tabla drum sounds.</li>
+  <li>Add new <code>:vinyl_</code> sample group with a range of vinyl scratches and
+hisses.</li>
+  <li>Add new samples: <code>:drum_cowbell</code>, <code>:drum_roll</code>, <code>:misc_crow</code>,
+<code>:misc_cineboom</code>, <code>:perc_swash</code>, <code>:perc_till</code>, <code>:loop_safari</code>,
+<code>:loop_tabla</code>.</li>
+</ul>
+
+<h2 id="gui-5">GUI</h2>
+
+<ul>
+  <li>Add new preference to enforce strict synth/FX timing. When enabled
+synths and samples no longer trigger if it is too late - instead they
+are silent and print a warning message. This behaviour ensures samples
+or synths are never triggered out of time.</li>
+  <li>New load button which will load the contents of a file into the
+current buffer.</li>
+  <li>The vertical bars which help visualise nesting now render in a
+contiguous fashion over blank lines.</li>
+  <li><code>C-k</code> now nukes over trailing whitespace.</li>
+  <li><code>load_sample</code> now has sample autocompletion.</li>
+  <li>GUI now correctly reports if the host is a Raspberry Pi 3.</li>
+  <li>New editor preference - Log Auto Scroll. When enabled will always
+scroll log to the bottom after printing every new message.</li>
+  <li>Whitespace at top and bottom of buffer is no longer trimmed.</li>
+  <li>Hitting <code>RETURN</code> now auto-indents the buffer - ensuring that the
+cursor is moved to the correct indentation on the following line.</li>
+  <li>Added Chinese Simplified GUI translation.</li>
+  <li>Log visibility now correctly matches GUI preference.</li>
+</ul>
+
+<h2 id="documentation-1">Documentation</h2>
+
+<ul>
+  <li>New tutorial section 3.7 on Sample Pack Filters.</li>
+  <li>New appendix sections.</li>
+  <li>Examples for <code>sample</code> fn have been completely rewritten and extended.</li>
+</ul>
+
+<h2 id="improvements-3">Improvements</h2>
+
+<ul>
+  <li><code>scale</code> and <code>chord</code> can now handle being passed no tonic such as:
+<code>(chord :minor)</code> which will return a ring of offsets from 0.</li>
+  <li><code>chord</code> learned new variants: <code>add2</code>, <code>add4</code>, <code>add9</code>, <code>add11</code>,
+<code>add13</code>, <code>madd2</code>, <code>madd4</code>, <code>madd9</code>, <code>madd11</code>, <code>madd13</code></li>
+  <li>The ring’s <code>.take</code> method can now take more elements than the original
+ring by wrapping around:
+<code>(ring 1, 2, 3).take(5) #=&gt; (ring 1, 2, 3, 1, 2)</code></li>
+  <li>Rings may now be added or subtracted from each other e.g.
+<code>(ring 1, 2,  3) + (ring 4) #=&gt; (ring 1, 2, 3, 4)</code></li>
+  <li>Adding or subtracting a number from a ring will create a new ring with
+the number added or subtracted from each of the original ring’s
+elements: <code>(ring 1, 2, 3) - 1 #=&gt; (ring 0.0, 1.0, 2.0)</code></li>
+  <li>Calling <code>(ring 1, 2, 3).take(0)</code> will now return an empty ring.</li>
+  <li><code>density</code> now complains if it isn’t passed a do/end block.</li>
+  <li>Improve error messages for <code>use/with_synth</code> when accidentally passed opts.</li>
+</ul>
+
+<h2 id="bugfixes-5">Bugfixes</h2>
+
+<ul>
+  <li>On OS X only raise an error on boot if it’s clear the sound card’s in
+and out rates are different.</li>
+  <li>Improve robustness of boot process on Windows.</li>
+  <li>Rest notes are no longer printed if synth logging is disabled.</li>
+  <li>No longer apply synth defaults to FX.</li>
+  <li>You may now control opts that have no associated info (previously it
+would raise a ‘not modulatable’ error).</li>
+  <li>Fix index lookup of Vectors.</li>
+  <li>Fix <code>C-i</code> doc lookup shortcut to work with <code>:tb303</code> synth docs.</li>
+  <li><code>C-i</code> now always displays docs where available (previously it was
+possible for docs not to be displayed).</li>
+  <li>Sliding between chords now works correctly  </li>
+  <li>Windows version will now boot on mutiple networked machines logged in
+with the same account.</li>
+</ul>
+
+<p><a name="v2.9"></a></p>
+
+<h1 id="version-29---venster">Version 2.9 - ‘Venster’</h1>
+
+<p><em>Thursday 31st December, 2015</em>
+<a href="https://github.com/samaaron/sonic-pi/commits/v2.9.0">(view commits)</a></p>
+
+<p>Hot on the heels of the previous release comes <code>v2.9</code> codenamed
+<code>Venster</code> (Dutch for window). This release has a specific focus on
+fixing all the known issues with Sonic Pi running on Windows. If you’ve
+tried Sonic Pi on Windows before and had issues, make sure to try it
+again with <code>v2.9</code>. If you’re still having issues on Windows please do
+let us know so we can fix it as soon as possible.</p>
+
+<p>For all you Raspberry Pi and Mac OS X users - you’re not left out. Sonic
+Pi is just as stable as it was before (if not more stable) and <code>v2.9</code>
+comes with a surprising amount of tweaks and features for its short 1
+month development cycle. There’s two new FX to play with: <code>tanh</code> and
+<code>gverb</code> as well as a heavily revamped logging system which is much
+clearer about printing which opts are actually being used for your
+synths and samples. Finally, we now include of all the published MagPi
+magazine articles in the tutorial. We also now have Hungarian and
+Norwegian translations of the GUI.</p>
+
+<p>Happy Live Coding!</p>
+
+<h2 id="breaking-changes-5">Breaking Changes</h2>
+
+<ul>
+  <li>Rename fn <code>invert_chord</code> to <code>chord_invert</code></li>
+  <li>Sampler no longer mixes <code>rate:</code> and <code>pitch_stretch:</code> opts. It’s now
+possible to set the <code>rate:</code> independent of the <code>pitch:</code> modification
+caused by <code>pitch_stretch</code>.</li>
+</ul>
+
+<h2 id="new-fns-4">New Fns</h2>
+
+<ul>
+  <li><code>block_duration</code> - returns the duration of the given block in seconds (not scaled with the BPM).</li>
+  <li><code>block_slept?</code> - returns true if the contents of the block slept or synced.</li>
+  <li><code>synth_names</code> - returns a list of all the available synths</li>
+  <li><code>reset_mixer!</code> - resets the main mixer back to its default values.</li>
+  <li><code>sample_free</code> - unload a sample from memory to free up memory usage.</li>
+  <li><code>sample_free_all</code> - unload all samples from memory.</li>
+  <li><code>use_octave</code> - similar to <code>use_transpose</code> but for whole octaves.</li>
+  <li><code>with_octave</code> - similar to <code>with_transpose</code> but for whole octaves.</li>
+  <li><code>use_merged_sample_defaults</code> - similar to <code>use_merged_synth_defaults</code>
+but for samples</li>
+  <li><code>with_merged_sample_defaults</code> - similar to
+<code>with_merged_synth_defaults</code> but for samples</li>
+  <li><code>use_cent_tuning</code> - uniformly tune all subsequent notes in cents</li>
+  <li><code>with_cent_tuning</code> - uniformly tune all notes in cents within the block</li>
+</ul>
+
+<h2 id="synths--fx-3">Synths &amp; FX</h2>
+
+<ul>
+  <li>New FX <code>tanh</code> - for more distortion goodness.</li>
+  <li>New FX <code>gverb</code> - a different reverb FX to play with.</li>
+</ul>
+
+<h2 id="gui-6">GUI</h2>
+
+<ul>
+  <li>Synths and samples now also log defaults set by <code>use_synth_defaults</code>
+and friends.</li>
+  <li>Opts are logged in the order they were defined with local opts first
+followed by inherited opts. </li>
+  <li>BPM scaling is now accounted for in logging vals.</li>
+  <li>Log metadata such as run number and time is now printed in a more
+code-like way: as a hash of key value pairs.</li>
+  <li><code>C-k</code> will now kill multiple lines if lines end with <code>,</code>.</li>
+  <li>When saving a buffer a <code>.txt</code> extension is automatically added to the
+file name if none specified.</li>
+  <li>Add Hungarian and Norwegian translations of GUI.</li>
+  <li>Add Spanish translation of tutorial.</li>
+  <li>Add title to main window - enables Sonic Pi to be selected in
+screensharing app lists such as Google Hangouts and OBS.</li>
+  <li>Add autocompletion for tuning systems.</li>
+</ul>
+
+<h2 id="documentation-2">Documentation</h2>
+
+<ul>
+  <li>Add 8 complete MagPi magazine articles to the tutorial in appendix A.</li>
+  <li>Add new example ‘ambient experiment’ by Darin Wilson.</li>
+  <li>Add new example ‘chord inversions’ by Adrian Cheater.</li>
+  <li>Change tutorial license to CC-BY-SA 4.0.</li>
+  <li>Add instructions for compiling and building on Windows.</li>
+  <li>Many, many minor tweaks and improvements.</li>
+</ul>
+
+<h2 id="improvements-4">Improvements</h2>
+
+<ul>
+  <li>Add <code>sync:</code> opt to <code>live_loop</code> and <code>in_thread</code>. This now syncs the
+live loop once on creation. Similar to the <code>delay:</code> opt. If both
+<code>sync:</code> and <code>delay:</code> are specified then the delay happens before the
+sync.</li>
+  <li>The <code>synth</code> fn can now play chords with the <code>notes:</code> opt such as:
+<code>synth :dsaw, notes: (chord :e3, :minor)</code>. This will return a single
+controllable synth node representing all the notes similar to
+<code>play_chord</code>.</li>
+  <li>BPM scaling and other normalisation is now honoured when controlling nodes</li>
+  <li>The <code>on:</code> opt is now honoured when playing chords.</li>
+  <li>Samplers sound signal now bypasses filter envelope when not used.</li>
+  <li>It is now possible to use externally defined FX synths by passing a
+string as the FX name: <code>with_fx "my_shiny_effect"</code>. This needs to be
+loaded manually via <code>load_synthdefs</code>.</li>
+  <li>OS X now supports rates other than 44.1k provided they are similar for
+both audio in and out.</li>
+  <li>Run code in <code>~/.sonic-pi/init.rb</code> on launch if it exists.  </li>
+  <li>If environment variable <code>SONIC_PI_HOME</code> is set it will be used over
+<code>~</code> as the root of the user’s <code>.sonic-pi</code> directory (used to auto-save
+files and store logs).</li>
+  <li>Default sound card selection is now honoured on Raspberry Pi - so you
+may now use your IQaudIO hat (or similar) out of the box.</li>
+</ul>
+
+<h2 id="bugfixes-6">Bugfixes</h2>
+
+<ul>
+  <li>Fix number of synth validation errors.</li>
+  <li>Fix sporadically failing boot issues on Windows</li>
+  <li>Add auto-reboot functionality for audio server. This now detects
+errors in the server (such as a killed or zombied process) and
+automatically reboots it to enable Sonic Pi to continue without a full
+restart. Reboots automatically reload all loaded samples and
+synthdefs.</li>
+  <li><code>sample_duration</code> now correctly takes account of TL defaults set by
+<code>use_sample_defaults</code>.</li>
+  <li>Sampler opts <code>pitch_stretch</code>, <code>beat_stretch</code> and <code>rpitch</code> can now be
+used in TL defaults.</li>
+</ul>
+
+<p><a name="v2.8"></a></p>
+
+<h1 id="version-28---karlsruhe">Version 2.8 - ‘Karlsruhe’</h1>
+<p><em>Friday 20th November, 2015</em>
+<a href="https://github.com/samaaron/sonic-pi/commits/v2.8.0">(view commits)</a></p>
+
+<p>This release, named after Karlsruhe, one of the home cities of live
+coding, is mainly a maintenance release with a strong focus on both
+performance, stability and documentation. This is therefore the fastest
+and most stable release of Sonic Pi ever with a massive 10% performance
+improvement on the original Raspberry Pi 1. It also ships with new
+translations in Polish, Japanese and French. Many of these improvements
+(such as the complete rewrite of the OSC stack) are not documented in
+this release list but can instead be found in the commit logs over on
+Github.</p>
+
+<p>However, not to go unnoticed are a number of exciting new features. For
+example we now have a new Band EQ FX, the ability to use MIDI note names
+such as <code>:e5</code> as values for opts such as <code>cutoff:</code>, and new powerful
+cutoff envelopes on the sampler.</p>
+
+<h2 id="breaking-changes-6">Breaking Changes</h2>
+
+<ul>
+  <li>Shortcuts for switching buffers have changed. They are now <code>M-{</code> and
+<code>M-}</code> for switching left and right respectively.</li>
+  <li><code>sync</code> no longer inherits BPM by default. Set the <code>bpm_sync:</code> opt to
+true to enable BPM inheritance.</li>
+  <li>Random seed generation for new threads is now reset on calls to
+<code>use_random_seed</code>.</li>
+</ul>
+
+<h2 id="new-fns-5">New Fns</h2>
+
+<ul>
+  <li><code>octs</code> - returns a ring of successive octaves.</li>
+  <li><code>assert</code> - for raising an exception if the argument is not true.</li>
+  <li><code>assert_equal</code> - for raising an exception if the two arguments are not
+equal.</li>
+  <li><code>bt</code> - converts the specified time w.r.t. the current BPM.</li>
+  <li><code>inspect</code> - similar to <code>print</code> but prints the inspected version of the argument.</li>
+</ul>
+
+<h2 id="gui-7">GUI</h2>
+
+<ul>
+  <li>New translations for Polish, Japanese and French.</li>
+  <li>Improve efficiency of logging panel.</li>
+  <li><code>M-RET</code> is now a duplicate shortcut for running the code.</li>
+  <li>Log title bar is now hidden in full-screen mode.</li>
+  <li>Log - don’t display └ or ├ if the line is blank, instead display │</li>
+  <li>Add sample name autocompletion to more fns such as <code>sample_duration</code>.</li>
+</ul>
+
+<h2 id="documentation-3">Documentation</h2>
+
+<ul>
+  <li>New tutorial section on ring chains (chainable functions for modifying rings)</li>
+  <li>Tilburg 2 example slightly tweaked for Raspberry Pi 1 compatibility.</li>
+  <li>Many minor tweaks and improvements in all areas.</li>
+</ul>
+
+<h2 id="synths--fx-4">Synths &amp; FX</h2>
+
+<ul>
+  <li>New FX - Band EQ for attenuating or boosting a specific frequency band.</li>
+  <li>New synth - DPulse - a detuned pulse wave.</li>
+  <li>Sampler now has a cutoff envelope which can be accessed via new opts
+which mirror the standard envelope opts but with a <code>cutoff_</code> prefix
+(such as <code>cutoff_attack</code>, <code>cutoff_decay_level</code> and friends).</li>
+  <li>Sampler now correctly handles samples with different sample rates.</li>
+  <li>Bitcrusher FX now has an internal low pass filter modifiable via a new <code>cutoff</code> opt.</li>
+  <li>Panslicer now correctly honours min and max pan values.</li>
+  <li>New default opt <code>on:</code> for both <code>sample</code> and <code>synth</code>. This acts like
+<code>if</code> but ensures all the opt vals are evaluated (useful if wanting to
+keep the consumption of random streams or ticks consistent even when
+not triggering a synth.</li>
+  <li>MIDI opts such as <code>cutoff:</code> can now accept note names such as <code>:c4</code>.</li>
+  <li>FX learned the global <code>slide:</code> opt to match synths.</li>
+</ul>
+
+<h2 id="improvements-5">Improvements</h2>
+
+<ul>
+  <li>Massive performance improvements.</li>
+  <li>Teach <code>play_pattern_timed</code> to handle rings.</li>
+  <li><code>current_transpose</code> now returns 0 if there is no current
+transposition.</li>
+  <li>BPM scaling is now honoured when controlling synths and FX</li>
+  <li>All <code>with_fx*</code> fns now return the result of their block.</li>
+  <li><code>spark</code> now handles rings correctly.</li>
+  <li><code>spark</code> now treats booleans as 1s and 0s so you can now spark rings of bools.</li>
+  <li><code>puts</code>, <code>print</code> and <code>mc_message</code> now handle multiple message arguments</li>
+</ul>
+
+<h2 id="bug-fixes">Bug Fixes</h2>
+
+<ul>
+  <li>Ensure <code>with_fx</code> doesn’t swallow TL modifications such as
+transposition, current synth etc.</li>
+  <li>Ensure <code>with_fx</code> doesn’t affect random seed.</li>
+  <li>Improve reliability of boot process on Mac and Windows.</li>
+  <li>The FX <code>pre_amp:</code> opt is no longer scaled w.r.t. the current BPM.</li>
+  <li>Fixed GUI side of update checking system.</li>
+</ul>
+
+<p><a name="v2.7"></a></p>
+
+<h1 id="version-27---rerezzed">Version 2.7 - ‘Rerezzed’</h1>
+
+<p><em>Thursday 10th September, 2015</em>
+<a href="https://github.com/samaaron/sonic-pi/commits/v2.7.0">(view commits)</a></p>
+
+<p>This release brings a substantial change to the random number
+generator. This has the unfortunate side effect of breaking backwards
+compatibility.  If you have been using <code>rand</code>, <code>choose</code>, <code>shuffle</code> and
+friends to create predictable patterns for your riffs, your code will
+produce different results in this release. Please let me apologise and
+say it’s for a good cause. So what is this good cause?  Well, you can
+now jump backwards and forwards through the random stream giving you way
+more creative control than before! The random stream is now also unified
+with the random stream on the synthesis server allowing you to sync
+behaviour between synths and code. Exciting times.</p>
+
+<p>The sampler has also been super charged. We can now easily change the
+rate via MIDI note intervals with <code>rpitch:</code> and stretch the sample whilst
+preserving pitch via <code>pitch_stretch:</code> (although with variable results
+<code>;-)</code>).</p>
+
+<p>Finally you can now control the global mixer with <code>set_mixer_control!</code>
+for those full filter sweeps over the entire sound…</p>
+
+<p>Have fun and happy live coding!</p>
+
+<h2 id="breaking-changes-7">Breaking Changes</h2>
+
+<ul>
+  <li>Complete rewrite of random number system. This means if you’ve been
+combining calls to <code>use_random_seed</code> with randomisation to create
+predictable melodies/rhythms/timbral manipulations you will
+unfortunately get different results in <code>v2.7</code>. This change is to
+synchronise both the Ruby rand stream with the one in SuperCollider as
+well as enabling the reversal of calls to rand via <code>rand_back</code>.</li>
+  <li><code>sync</code> now causes the BPM to be inherited from the thread calling the
+matching <code>cue</code>. This may be disabled with the new <code>bpm_sync:</code> opt.</li>
+  <li><code>rrand</code> and <code>rand</code> now return 0 if called with 0.</li>
+  <li><code>invert_chord</code> now handles negative inversions in a more musically
+appropriate manner..</li>
+</ul>
+
+<h2 id="new-fns-6">New Fns</h2>
+
+<ul>
+  <li><code>ratio_to_pitch</code> which provides the inverse of <code>pitch_to_ratio</code></li>
+  <li><code>midi_notes</code> - returns a ring of numbers (mapping the source
+ring/array through the fn <code>note</code>).</li>
+  <li><code>rand_back</code> - reverse the random stream and ‘undo’ calls to <code>rand</code></li>
+  <li><code>rand_skip</code> - skip forward through the random stream.</li>
+  <li><code>rand_reset</code>- reset the random stream to the last seed.</li>
+</ul>
+
+<h2 id="gui-8">GUI</h2>
+
+<ul>
+  <li>It is now possible to toggle the commenting of whole selections or
+individual lines with the shortcut <code>M-/</code>.</li>
+  <li>Added Icelandic translation.</li>
+</ul>
+
+<h2 id="synths--fx-5">Synths &amp; FX</h2>
+
+<ul>
+  <li>All synths learned the <code>decay_level</code> opt to allow the sustain phase to
+shift between two distinct values. The default value for <code>decay_level</code>
+is to mirror <code>sustain_level:</code> thus preserving current behaviour.</li>
+  <li><code>play</code> and <code>synth</code> have now learned the <code>pitch:</code> opt to match
+<code>sample</code>. This just increments or decrements the final note.</li>
+  <li><code>sample</code> now correctly validates opts.</li>
+  <li><code>sample</code> learned the <code>pitch_stretch:</code> opt which combines <code>rate:</code>
+modification (similar to <code>beat_stretch:</code> with <code>pitch:</code>. Attempts to
+maintain the pitch whilst simultaneously changing the rate. The
+underlying implementation is very basic and can easily destroy the
+sound.</li>
+  <li><code>sample</code> learned the <code>rpitch:</code> opt for simple rate pitch
+modulation. This modifies the rate to match the specified number of
+MIDI notes relative from the current pitch. For example, a <code>rpitch:</code>
+of 12 would double the rate.</li>
+  <li>The unit of the FX <code>:echo</code>’s <code>decay:</code> opt is now beats and the value
+is scaled with the BPM.</li>
+</ul>
+
+<h2 id="examples">Examples</h2>
+
+<ul>
+  <li>Most examples have been tweaked to sound good with the new random
+generator. </li>
+  <li>Tilburg has been replaced with Tilburg 2. Play it and get your
+Algorave on!</li>
+</ul>
+
+<h2 id="improvements-6">Improvements</h2>
+
+<ul>
+  <li>Auto-align code on Run.</li>
+  <li><code>live_loop</code> learned the <code>seed:</code> opt which will set the new thread with
+the specified seed prior to initial run.</li>
+  <li>Add check to ensure BPM is a positive value.</li>
+  <li><code>density</code> has now been taught to handle values between 0 and 1 which
+will now stretch time for the specified block.</li>
+  <li>Errors now no longer print out crazy print version of context object
+i.e. #<sonicpispideruser1:0x007fc82e1f79a0></sonicpispideruser1:0x007fc82e1f79a0></li>
+  <li>Both <code>in_thread</code> and <code>live_loop</code> have now learned the <code>delay:</code> opt
+which will delay the initial execution by the specified number of
+beats.</li>
+  <li>Buffer and thread name are now printed on error.  </li>
+  <li><code>sample_duration</code> now understands all the opts that you can pass to <code>sample</code>  </li>
+  <li>It is now possible to do basic arithmetic on symbols representing
+rests: <code>:r + 3</code> returns <code>:r</code> (a rest plus any MIDI note shift is still
+a rest).</li>
+</ul>
+
+<h2 id="bug-fixes-1">Bug Fixes</h2>
+
+<ul>
+  <li>Fixed crash when synth args were specified as Rationals.  </li>
+  <li><code>note_info</code> now correctly handles octaves.</li>
+  <li>Fix windows paste shortcut <code>C-v</code>.</li>
+  <li>Teach <code>invert_chord</code> how to properly handle out of range index ranges.</li>
+</ul>
+
+<p><a name="v2.6"></a></p>
+
+<h1 id="version-26---algorave">Version 2.6 - ‘Algorave’</h1>
+
+<p><em>Thursday 30th July, 2015</em>
+<a href="https://github.com/samaaron/sonic-pi/commits/v2.6.0">(view commits)</a></p>
+
+<p>The laser beams sliced through the wafts of smoke as the subwoofer
+pumped bass deep into the bodies of the crowd. The atmosphere was ripe
+with a heady mix of synths and dancing. However something wasn’t quite
+right in this nightclub. Projected in bright colours above the DJ booth
+was futuristic text, moving, dancing, flashing. This wasn’t fancy
+visuals, it was merely a projection of Sonic Pi running on a Raspberry
+Pi. The occupant of the DJ booth wasn’t spinning disks or playing MP3s,
+she was writing, editing and evaluating code. She was <em>live coding</em> and
+this was an <a href="http://twitter.com/algorave">Algorave</a>.</p>
+
+<p>This release is codenamed <a href="http://twitter.com/algorave">Algorave</a> to
+celebrate that Sonic Pi is now ready to be performed within nightclubs
+as well as still being a fantastic tool for learning how to code
+creatively. There are many improvements as detailed below. However,
+let’s just take a brief look at some of the most fun. Firstly we have
+the new error reporting system to make it easier to find and debug your
+errors. Syntax errors are now blue and runtime errors pink. We also have
+a new look and feel including a new dark mode for performing in dark
+places. We also have some fantastic new synths, FX and have even
+improved the standard synths. For example, <code>sample</code> now lets you stretch
+to match the beat with the <code>beat_stretch:</code> opt and change pitch with
+<code>pitch:</code>. The <code>slicer</code> FX now sports a fantastic deterministic
+<code>probability:</code> opt for creating and manipulating rhythmic structures
+with ease. Finally there’s the new thread local <code>tick</code>/<code>look</code> system
+which will revolutionise the way you work with <code>ring</code>s within
+<code>live_loop</code>s. Of course there’s so much more too!</p>
+
+<p>Enjoy this release and happy <a href="http://algorave.com">Algoraving!</a></p>
+
+<h2 id="breaking-changes-8">Breaking Changes</h2>
+
+<ul>
+  <li>The <code>res:</code> opt for all synths and FX now has range 0-&gt;1 rather than
+1-&gt;0. This means that a higher res value results in more
+resonance. This will hopefully be more intuitive to beginners and less
+surprising for people with existing synth knowledge.</li>
+  <li>The fn <code>stop</code> has been renamed to <code>kill</code> for killing specific
+synths. In its place a new fn <code>stop</code> has been added to stop a given
+thread or <code>live_loop</code>.</li>
+  <li><code>invert_wave</code> opts are now inverted. The default is now 0 which
+has the same behaviour as the old 1.  This means that it’s more
+intuitive to use the opt as to invert the current wave, you now
+specify: <code>invert_wave: true</code>, rather than <code>invert_wave: false</code>. This
+shouldn’t affect any code which doesn’t explicitly set the <code>invert_wave:</code>
+opt. Pieces which have explicit inversion need to swap all 0s for 1s
+and vice versa.</li>
+  <li>The <code>res:</code> opt for <code>rrand</code> and <code>rdist</code> has been renamed to <code>step:</code> to
+avoid confusion with the resonance opt for cutoff filters.</li>
+  <li>Rename <code>pitch_ratio</code> to <code>pitch_to_ratio</code> to keep in line with other
+similar fns such as <code>midi_to_hz</code>.</li>
+</ul>
+
+<h2 id="new-fns-7">New Fns</h2>
+
+<ul>
+  <li>New thread-local (i.e. live_loop local) counter system via fns <code>tick</code>
+and <code>look</code>.</li>
+  <li>New fn <code>vector</code> which creates a new kind of Array - an immutable
+vector (<code>SPVector</code>) which is now the default base class for all rings.</li>
+  <li>New fns <code>use_sample_defaults</code> and <code>with_sample_defaults</code> which act
+similarly as their <code>*_synth_defaults</code> counterparts but for samples not
+synths.</li>
+  <li>New fns <code>use_tuning</code> and <code>with_tuning</code> for exploring other tuning
+systems such as <code>:just</code>, <code>:pythagorean</code>, and <code>:meantone</code>.</li>
+  <li>New fn <code>invert_chord</code> for chord inversions.  </li>
+  <li>New fn <code>current_beat_duration</code> for returning the duration of the
+current beat in seconds.</li>
+  <li>New fn <code>note_range</code> for returning a range of notes between two notes
+with a <code>pitches:</code> opt for constraining the choice of filler notes.</li>
+  <li>New fns <code>scale_names</code> and <code>chord_names</code> for returning a ring of all
+chords and scales.</li>
+  <li>New example <code>rerezzed</code> - strongly influenced by Daft Punk’s track
+<code>derezzed</code>.</li>
+  <li>New example <code>reich phase</code> - a nice way of combining <code>live_loop</code>s and
+<code>tick</code> to create sophisticated polyrhythms.</li>
+  <li>New fns <code>use_cue_logging</code> and <code>with_cue_logging</code> for enabling and
+disabling the logging of <code>cue</code> messages.</li>
+</ul>
+
+<h2 id="gui-9">GUI</h2>
+
+<ul>
+  <li>New visual look and feel including a new Dark Mode for live coding in
+night clubs.</li>
+  <li>New preferences for hiding/showing aspects of the GUI such as the
+buttons, log, tabs etc.</li>
+  <li>New preference for full screen mode.</li>
+  <li>Improve error message reporting. Syntax errors are now made distinct
+from runtime errors with colour-coded messages. Also, the line number
+of the error is much more visible, and the line of the error is
+highlighted with an arrow in the left-hand margin.</li>
+  <li>Workspaces are now named buffers. This is a smaller word which works
+better on lower res screens and is also a lovely term used by a number
+of wonderful programming editors such as Emacs.</li>
+  <li>Print friendly messages to the log on boot.  </li>
+  <li>Add pref option to check for updates now.</li>
+</ul>
+
+<h2 id="synths--fx-6">Synths &amp; FX</h2>
+
+<ul>
+  <li>New FX - <code>krush</code> for krushing the sound.</li>
+  <li>New FX - <code>panslicer</code> similar to <code>slicer</code> and <code>wobble</code> but modulates
+the stereo panning of the audio.</li>
+  <li>New synth <code>subpulse</code> for a full range pulse with extra bass.</li>
+  <li>New synth <code>blade</code> - a moody Blade Runner-esque synth violin</li>
+  <li>New synth <code>piano</code> - a basic piano emulation. Only capable of whole notes.</li>
+  <li>FXs <code>slicer</code> and <code>wobble</code> now have a wonderful new <code>probability:</code> opt
+which will only slice on (or off depending on wave inversion) with the
+specified probability. The behaviour is deterministic, so repeated
+calls with the same <code>seed:</code> and <code>probability:</code> opts will result in the
+same behaviour. Great for adding interesting rhythmic variation to
+sound.</li>
+  <li>FXs <code>slicer</code> and <code>wobble</code> now have smoothing opts for even more
+control over the resulting wave form.</li>
+  <li>Teach <code>sample</code> the opt <code>beat_stretch:</code> for modifying the rate of the
+sample to make sure the duration of the sample is n beats long (with
+respect to the current bpm). Note: stretching the beat <em>does</em> change
+the pitch.</li>
+  <li>Teach <code>sample</code> the opt <code>pitch</code> to enable pitch shifting on any sample.  </li>
+  <li>FX <code>flanger</code>’s feedback mixing is now more fair and is less likely to
+hike up the amplitude.</li>
+</ul>
+
+<h2 id="improvements-7">Improvements</h2>
+
+<ul>
+  <li>Teach <code>note_info</code> to also handle a number as its param.</li>
+  <li>Teach <code>factor?</code> to handle division by 0.</li>
+  <li>Teach <code>load_sample</code> to throw exception when passed an empty path.</li>
+  <li>Now throws an exception when you attempt to create an empty ring.</li>
+  <li>Rings are now immutable (in the Clojure sense) which means they can be
+safely passed to multiple threads/live_loops without any issues.</li>
+  <li>Teach <code>use_sample_bpm</code> the opt <code>num_beats:</code> to indicate that a given
+sample consists of a specific number of beats.</li>
+  <li>Teach <code>comment</code> and <code>uncomment</code> to require blocks.  </li>
+  <li>Teach synth chord groups to allow their notes to be controlled
+individually to allow transitions between chords.</li>
+  <li>Throw nicer exception when unable to normalise synth args  </li>
+  <li>Teach <code>chord</code> the new opt <code>invert:</code> as a shortcut to the new
+<code>invert_chord</code> fn.</li>
+  <li>Teach <code>sample_duration</code> about the opts <code>start:</code> and <code>finish:</code> and
+envelope opts such as <code>attack:</code> and <code>release:</code>. This allows you to
+replace any call to <code>sample</code> with <code>sample_duration</code> to get the exact
+duration of that call.</li>
+  <li>Teach <code>chord</code> the opt <code>num_octaves</code> to enable the easy creation of
+arpeggios.</li>
+  <li>It is now possible to set the block type in the Minecraft API.</li>
+</ul>
+
+<h2 id="bug-fixes-2">Bug Fixes</h2>
+
+<ul>
+  <li>Fix bug in <code>with_sample_pack_as</code> to now correctly accept a block.</li>
+  <li><code>mc_surface_teleport</code> no longer throws an error.</li>
+  <li><code>Array#shuffle</code> now works correctly with the random seeds for
+deterministic behaviour.</li>
+  <li>Fix broken behaviour with multiple nested calls to <code>*_sample_bpm</code>.</li>
+</ul>
+
+<p><a name="v2.5"></a></p>
+
+<h1 id="version-25---craft">Version 2.5 - ‘Craft’</h1>
+
+<p><em>Monday 13th April, 2015</em>
+<a href="https://github.com/samaaron/sonic-pi/commits/v2.5.0">(view commits)</a></p>
+
+<p>This release comes with support for
+<a href="http://pi.minecraft.net">Minecraft: Pi Edition</a> installed on the
+Raspberry Pi. You can now create music with Minecraft visuals or even
+code up a synth score in Minecraft blocks and read and play the score
+from Sonic Pi! Another exciting aspect of this release is much improved
+editor functionality for navigating around and manipulating code via
+keyboard shortcuts. This means that live coding just got a lot more
+fun. The keyboard shortcuts are based on the standard shortcuts provided
+by <a href="https://www.gnu.org/software/emacs/">GNU Emacs</a> - the oldest and
+most powerful text editor in use by wizard programmers today.</p>
+
+<h2 id="breaking-changes-9">Breaking Changes</h2>
+
+<ul>
+  <li><code>invert_wave</code> now defaults to 1 everywhere. I found I always inverted
+ the wave every time I used a synth/fx where wave inversion was
+ key. This seemed like such a better default I’ve broken compatibility
+ for it. Apologies if this has affected you.</li>
+  <li>The <code>flanger</code> FX now defaults the optional arg <code>stereo_invert_wave</code> to
+1.</li>
+  <li>Renamed FX <code>ring</code> to <code>ring_mod</code> to reduce the potential for confusion
+with the <code>ring</code> datastructure.</li>
+  <li><code>Tab</code> now indents current line or selection rather than inserting a
+useless tab character.</li>
+</ul>
+
+<h2 id="new">New</h2>
+
+<ul>
+  <li>Support for programming <a href="http://pi.minecraft.net">Minecraft Pi Edition</a>.</li>
+  <li><code>sync</code> now accepts multiple cue ids and will sync on the first matching id.</li>
+  <li>New fn <code>pitch_ratio</code> for converting a midi note to a frequency
+ratio. Useful for tuning samples.</li>
+  <li>New fn <code>line</code> for creating a line from start to finish with a specific
+number of slices.</li>
+  <li>New fn <code>spark</code> for displaying lists of numbers in a fancy text-graph
+(<code>▁▃▅▇</code>) in the log.</li>
+  <li>On stop, amplitude of output slides down over 1s to silence for a
+smoother transition.</li>
+  <li><code>sample_duration</code> now scales result based on current BPM.</li>
+  <li><code>range</code> now accepts optional args: <code>inclusive:</code> and <code>step:</code>.</li>
+</ul>
+
+<h2 id="gui-10">GUI</h2>
+
+<ul>
+  <li>German translation of GUI and tutorial. Simply open Sonic Pi with a
+machine with a German localisation setting.</li>
+  <li>Display GUI fully maximised when opening for first ever time.</li>
+  <li>Workspace indexing now starts at 0 to match standard programming indexes.</li>
+  <li>New shortcuts - <code>M-&lt;</code> and <code>M-&gt;</code> for switching workspaces.</li>
+  <li>Many new Emacs-based code navigation and editing shortcuts. See the
+shortcut cheatsheet in the built-in tutorial for more information.</li>
+  <li>Increase height of doc and error panes.</li>
+  <li>Improve error pane colour scheme.</li>
+  <li>Auto-align now trims whitespace from start and end of buffer.</li>
+  <li>Add preference toggle to hide/show line numbers.</li>
+  <li>Documentation now supports semantic formatting and highlighting.</li>
+  <li>Docsystem tabs are now positioned at the bottom for better navigation.</li>
+  <li>New preference to hide/show line numbers in editor.</li>
+</ul>
+
+<h2 id="synths--fx-7">Synths &amp; FX</h2>
+
+<ul>
+  <li>New FX - <code>:pitch_shift</code>  </li>
+</ul>
+
+<h2 id="bug-fixes-3">Bug Fixes</h2>
+
+<ul>
+  <li>Fix OSC lib to properly encode multibyte chars such as UTF8</li>
+  <li>Fix sporadic issue on some platforms when trigging percussive sounds
+within a <code>reverb</code> FX caused a serious audio overload.</li>
+  <li>Add missing fn metadata for <code>*_sample_bpm</code></li>
+  <li>Fix synth metadata for FX <code>:bpf</code>.</li>
+  <li>Fix arg metadata for <code>use_sample_pack_as</code>  </li>
+  <li>Rings now pretty print themselves as <code>(ring 1, 2, 3)</code> rather than <code>[1, 2, 3]</code>.</li>
+  <li><code>C-k</code> keyboard shortcut now copies text into the clipboard.</li>
+  <li>Scales and chords now return actual <code>ring</code>s rather than <code>ring</code>-like
+things.</li>
+  <li>Improve Ring Mod FX arguments</li>
+  <li>Exceptions created within <code>with_fx</code> are now raised correctly.</li>
+</ul>
+
+<p><a name="v2.4"></a></p>
+
+<h1 id="version-24---defrost">Version 2.4 - ‘Defrost’</h1>
+<p><em>Wednesday 11th February, 2015</em>
+<a href="https://github.com/samaaron/sonic-pi/commits/v2.4.0">(view commits)</a></p>
+
+<p>A quick release following <code>v2.3</code> to address an issue with the GUI
+freezing on specific CPUs. However, although this release has had a
+small development cycle, it ships with three fantastic features. Firstly
+we now have the <code>spread</code> fn which provides an amazing way to create
+interesting rhythms with very little code. Secondly we can now use
+<code>cutoff:</code> on any sample massively increasing their timbral range and
+finally we have three exciting new synths for you to play with. Have
+fun!</p>
+
+<h2 id="breaking-changes-10">Breaking Changes</h2>
+
+<ul>
+  <li>Unfortunately 5 pre-release synths accidentally slipped into
+v2.3. Three of them have been polished up and are in this release (one
+with major changes including a name change). However, the other two
+have been removed.</li>
+</ul>
+
+<h2 id="new-1">New</h2>
+
+<ul>
+  <li>New fn <code>spread</code> for creating rings of Euclidean distributions. Great
+for quickly creating interesting rhythms.</li>
+  <li>GUI now automatically appends a <code>:</code> to the FX opt autocomplete list  </li>
+  <li>Synths and FX now raise an exception if any of their non-modulatable
+opts are modulated. This is disabled when the pref ‘check synth
+args’ is unchecked.</li>
+  <li>GUI now renders pretty UTF-8 <code>└─</code> <code>├─</code> characters when printing in the log
+on RP.</li>
+  <li>Improve docstrings for sample player.</li>
+</ul>
+
+<h2 id="synths--fx-8">Synths &amp; FX</h2>
+
+<ul>
+  <li>New Synth <code>:dark_ambience</code>, an ambient bass trying to escape the
+darkness.</li>
+  <li>New Synth <code>:hollow</code>, a hollow breathy sound.</li>
+  <li>New Synth <code>:growl</code>, a deep rumbling growl.</li>
+  <li>Sampler synths now sport built-in <code>rlpf</code> and <code>normaliser</code> FX. These
+are disabled by default (i.e. won’t affect sound of the sample) and
+can by enabled via the new <code>cutoff:</code>, <code>res:</code> and <code>norm:</code> opts.</li>
+</ul>
+
+<h2 id="bug-fixes-4">Bug Fixes</h2>
+
+<ul>
+  <li>Fix insanely obscure bug which caused the GUI to freeze on certain
+platforms (32 bit Windows and RP2 with 2G/2G kernel).</li>
+  <li>Remove DC Bias offset from Prophet synth (see
+http://en.wikipedia.org/wiki/DC_bias)</li>
+</ul>
+
+<p><a name="v2.3"></a></p>
+
+<h1 id="version-23---bitcrush">Version 2.3 - ‘Bitcrush’</h1>
+<p><em>Wednesday 28th January, 2015</em>
+<a href="https://github.com/samaaron/sonic-pi/commits/v2.3.0">(view commits)</a></p>
+
+<h2 id="breaking-changes-11">Breaking Changes</h2>
+
+<ul>
+  <li>Playing chords with the fn <code>chord</code> now divides the amplitude of each
+resulting synth by the number of notes in the chord. This ensures the
+resulting amplitude isn’t excessive and is normalised.</li>
+  <li>Chords now evaluate their args once and those args are used for all
+synth triggers. This means random values are only generated once and
+are similar across all notes in the chord. Previous behaviour can be
+obtained by calling play multiple times with no interleaved sleeps.</li>
+  <li>Ensure each new thread’s random number generator is unique yet seeded
+in a deterministic manner. This stops random vals across <code>at</code> from
+being identical.</li>
+  <li><code>range</code> is now exclusive: <code>(range 1, 5) #=&gt; (ring 1, 2, 3, 4)</code></li>
+</ul>
+
+<h2 id="new-2">New</h2>
+
+<ul>
+  <li>New fn <code>density</code> for compressing and repeating time Dr Who style. For
+example, wrapping some code with a call to density of 2 will double
+the bpm for that block as well as repeating it twice. This ensures the
+block takes the same amount of time to execute while doing double the
+work.</li>
+  <li>New fns <code>with_bpm_mul</code> and <code>use_bpm_mul</code> which will multiply the
+current bpm by a specified amount. Useful for slowing down and
+speeding up the execution of a specific thread or live_loop.</li>
+  <li>New fn <code>rdist</code> - generate a random number with a centred distribution</li>
+  <li>New examples: <code>square skit</code>, <code>shufflit</code> and <code>tilburg</code></li>
+</ul>
+
+<h2 id="improvements-8">Improvements</h2>
+
+<ul>
+  <li>Teach control to ignore nil nodes i.e. <code>control nil, amp: 3</code> will do
+nothing.</li>
+  <li>Teach Float#times to yield a float to the block. For example,
+<code>3.4.times {|v| puts v}</code> will yield <code>0.0</code>, <code>1.0</code> and <code>2.0</code>.</li>
+  <li>Synth, Sample and FX args now handle bools and nil correctly. <code>true</code>
+resolves to <code>1.0</code> and <code>false</code>, <code>nil</code> resolve to <code>0.0</code>. This allows you
+to write code such as: <code>play :e3, invert_wave: true</code></li>
+  <li>Teach <code>at</code> to handle varying block arities differently. See docs for
+more detail. Original behaviour is preserved and only extended.</li>
+  <li>App now checks for updates (at most once every 2 weeks). This may be
+disabled in the prefs.</li>
+  <li>Teach <code>:reverb</code> FX to extend its kill delay time with larger room
+sizes to reduce the chance of clipping.</li>
+</ul>
+
+<h2 id="synths--fx-9">Synths &amp; FX</h2>
+
+<ul>
+  <li>New FX <code>bitcrusher</code> - for crunching and destroying those hi-fi sounds.</li>
+  <li>New FX <code>flanger</code> - a classic swhooshing effect typically used with
+vocals and guitars.</li>
+  <li>New FX <code>ring</code> - ring modulation for that friendly Dalek sound</li>
+  <li>New FX <code>bpf</code> - a band pass filter</li>
+  <li>New FX <code>rbpf</code> - a resonant band pass filter</li>
+  <li>New FX <code>nbpf</code> - a normalised band pass filter</li>
+  <li>New FX <code>nrbpf</code> - a normalised resonant band pass filter</li>
+</ul>
+
+<h2 id="new-samples">New Samples</h2>
+
+<ul>
+  <li><code>perc_snap</code> - a finger snap</li>
+  <li><code>perc_snap2</code> - another finger snap</li>
+  <li><code>bd_ada</code> - a bass drum</li>
+  <li><code>guit_em9</code> - a lovely guitar arpeggio over Em9</li>
+</ul>
+
+<h2 id="bug-fixes-5">Bug Fixes</h2>
+
+<ul>
+  <li>Namespace <code>live_loop</code> fn and thread names to stop them clashing with
+standard user defined threads and fns.</li>
+  <li>GUI no longer crashes when you start a line with a symbol.</li>
+  <li><code>with_fx</code> now returns the result of the block</li>
+  <li>Kill zombie scsynth servers on startup for better crash recovery.</li>
+  <li>Handle paths with UTF8 characters gracefully</li>
+  <li>Force sample rate for output and input to 44k on OS X. This stops
+scsynth from crashing when output and input sample rates are
+different.</li>
+</ul>
+
+<p><a name="v2.2"></a></p>
+
+<h1 id="version-22---slicer">Version 2.2 - ‘Slicer’</h1>
+<p><em>Thursday 18th December, 2014</em>
+<a href="https://github.com/samaaron/sonic-pi/commits/v2.2.0">(view commits)</a></p>
+
+<p>This release brings a number of nice enhancements. However the main
+feature is the accurate timing for triggering FX. This means you can now
+reliably use FX for accurate rhythmic purposes such as wobbling, slicing
+and echoes.</p>
+
+<h2 id="breaking-changes-12">Breaking Changes</h2>
+
+<ul>
+  <li><code>use_sample_pack_as</code> now uses a double underscore <code>__</code> as a separator
+between the user-specified alias and the sample name.</li>
+</ul>
+
+<h2 id="api-changes">API Changes</h2>
+
+<ul>
+  <li>Teach synth args to take prefixed maps: <code>play 50, {amp: 0.5}, {release: 2}, amp: 2</code></li>
+  <li>Don’t round Floats when user specifically prints them to log with puts</li>
+  <li><code>with_fx</code> FX synths are now triggered using virtual time rather than
+real time. This means that FX can now be used for rhythmical purposes.</li>
+  <li>Work on new <code>RingArray</code> datastructure. This is essentially an array
+that wraps its indexes so you can use indexes larger than the array size.</li>
+  <li>New fn <code>ring</code> - <code>(ring 1, 2, 3)</code> creates a new ring array.</li>
+  <li>New fn <code>knit</code> - <code>(knit :a1, 2, :c1, 1)</code> returns <code>(ring :a1, :a1, :c1)</code></li>
+  <li>New fn <code>bools</code> - <code>(bools 1, 0, 1)</code> returns <code>(ring true, false, true)</code></li>
+  <li>New fn <code>range</code> - <code>(range 70, 100, 10)</code> returns <code>(ring 70, 80, 90, 100)</code></li>
+  <li>New fn <code>sample_loaded?</code> - to detect whether a specific sample has been loaded</li>
+</ul>
+
+<h2 id="synths--fx-10">Synths &amp; FX</h2>
+
+<ul>
+  <li>Fixed regression in <code>:tb303</code> synth - sound is reverted to v2.0 behaviour</li>
+  <li>New Synth - <code>:square</code> - Pure square wave</li>
+</ul>
+
+<h2 id="gui-11">GUI</h2>
+
+<ul>
+  <li>Help system now autodocks on close</li>
+  <li>Preferences are now remembered across sessions</li>
+  <li>On Raspberry Pi, previous volume and audio output options are forced
+on boot.</li>
+</ul>
+
+<h2 id="new-samples-1">New Samples</h2>
+
+<ul>
+  <li><code>bd_tek</code> - Bass drum</li>
+</ul>
+
+<h2 id="bug-fixes-6">Bug fixes</h2>
+
+<ul>
+  <li><code>one_in</code> now returns false if num is &lt; 1</li>
+  <li>Ensure <code>live_loop</code>’s no-sleep detector works within nested <code>with_fx</code> blocks</li>
+  <li><code>chord</code> now returns a ring.</li>
+</ul>
+
+<h1 id="version-211---firewall">Version 2.1.1 - ‘Firewall’</h1>
+<p><em>Tuesday 25th November, 2014</em>
+<a href="https://github.com/samaaron/sonic-pi/commits/v2.1.1">(view commits)</a></p>
+
+<ul>
+  <li>Windows version no longer needs special firewall exceptions to run</li>
+  <li>Added license information to info window</li>
+  <li>Minor grammar and spelling tweaks to tutorial</li>
+</ul>
+
+<p><a name="v2.1"></a></p>
+
+<h1 id="version-21---core">Version 2.1 - ‘Core’</h1>
+<p><em>Friday 21st November, 2014</em>
+<a href="https://github.com/samaaron/sonic-pi/commits/v2.1.0">(view commits)</a></p>
+
+<p>The focus of release is very much on technical improvements, efficiency
+and general polish.</p>
+
+<p>The most obvious and exciting change is the introduction of the
+<code>live_loop</code> which will change the way you work with Sonic Pi. For more
+information on <code>live_loop</code> take a look at the new section in the
+tutorial. Another very exciting development is that v2.1 marks the
+official support for Windows thanks to the excellent work by Jeremy
+Weatherford. Finally, this release is also the first release where Sonic
+Pi has a Core Team of developers. Please give a warm welcome to Xavier
+Riley, Jeremy Weatherford and Joseph Wilk.</p>
+
+<h2 id="api-changes-1">API Changes</h2>
+
+<ul>
+  <li>New fn <code>live_loop</code> - A loop for live coding</li>
+  <li>New fn <code>inc</code> - increment</li>
+  <li>New fn <code>dec</code> - decrement</li>
+  <li>New fn <code>quantise</code> - quantise a value to resolution</li>
+  <li>New fn <code>factor?</code> - Factor test</li>
+  <li>New fn <code>at</code> - Run a block at the given times</li>
+  <li>New fn <code>degree</code> - for resolving a note in a scale by degree such as <code>:i</code>, <code>:iv</code></li>
+  <li>New fn <code>chord_degree</code> - Construct chords based on scale degrees</li>
+  <li>New TL fn <code>use_sample_bpm</code> - for changing the BPM based on a sample’s duration</li>
+  <li>New fn <code>rest?</code> - Determine if note or args is a rest</li>
+  <li>New fn <code>vt</code> - Get virtual time</li>
+  <li>New fn <code>set_control_delta!</code> - Set control delta globally</li>
+  <li><code>wait</code> now handles both <code>sleep</code> and <code>sync</code> functionality</li>
+  <li>Allow first arg to <code>play</code> to be a proc or lambda. In which case simple call it and use the result as the note</li>
+  <li>Teach <code>play</code> to accept a single map argument (in which case it will extract <code>:note</code> key out if it exists.</li>
+  <li>Fns <code>play</code> and <code>synth</code> now treat ‘notes’ <code>nil</code>, <code>:r</code> and <code>:rest</code> as rests and don’t trigger any synths.</li>
+</ul>
+
+<h2 id="gui-modifications">GUI Modifications</h2>
+
+<ul>
+  <li>Updated and improved tutorial</li>
+  <li>Much improved autocompletion</li>
+  <li>Add HPF, LPF, mono forcer and stereo swapping preferences to new studio section for use when performing with Sonic Pi through an external PA.</li>
+  <li>Shortcuts overhauled - now supports basic Emacs-style Ctrl-* navigation.</li>
+  <li>Shortcuts Alt-[ and Alt-] now cycle through workspaces</li>
+  <li>Shortcuts now work when toolbar is hidden</li>
+  <li>Font sizes for individual workspaces are now stored between sessions</li>
+  <li>Ctl-Mouse-wheel zooms font on Windows</li>
+  <li>Links are now clickable (opening external browser)</li>
+  <li>Entries  in docsystem’s synth arg table are now clickable and will take focus down to arg documentation</li>
+  <li>Stop users accidentally clearing entire workspace if they type quickly after hitting run</li>
+  <li>Hitting F1 or <code>C-i</code> over a function name now opens up the doc system at the relevant place</li>
+</ul>
+
+<h2 id="bugsimprovements">Bugs/Improvements</h2>
+
+<ul>
+  <li>Reworked examples.</li>
+  <li>Much improved efficiency in many areas - especially for Raspberry Pi.</li>
+  <li>Avoid occasional clicking sound when stopping runs</li>
+  <li>Note Cb is now correctly resolved to be a semitone lower than C</li>
+  <li>Non RP systems now start with more audio busses (1024)</li>
+  <li>Array#sample and Array#shuffle are now correctly seeded with thread local random generator</li>
+  <li>Log files are now placed into ~/.sonic-pi/log</li>
+  <li>Chords and scales now wrap around when accessed from indexes outside of their range.</li>
+  <li><code>rand_i</code> and <code>rrand_i</code> now correctly return integers rather than floats</li>
+  <li>rrand arguments now correctly handle a range of 0 (i.e. min == max)</li>
+  <li>Line offset in error messages is now correct</li>
+  <li>When saving files on Windows, CRLF line endings are used</li>
+  <li>Stop users defining functions with same name as core API fns</li>
+</ul>
+
+<h2 id="synths-samples--fx">Synths, Samples &amp; FX</h2>
+
+<ul>
+  <li>New samples (bass drums, snares and loops)</li>
+  <li>Allow <code>mod_range:</code> opt to have negative values (for oscillating with lower notes)</li>
+  <li>Change slide mechanism to default to linear sliding with support for changing the curve type. All modifiable args now have corresponding  <code>_slide_shape</code> and <code>_slide_curve</code> args.</li>
+  <li>Improve TB303 synth - now supports separate cutoff ADSR envelopes. New opts:
+    <ul>
+      <li><code>cutoff_attack:</code>,</li>
+      <li><code>cutoff_sustain:</code>,</li>
+      <li><code>cutoff_decay:</code>,</li>
+      <li><code>cutoff_release:</code>,</li>
+      <li><code>cutoff_min_slide:</code>,</li>
+      <li><code>cutoff_attack_level:</code>,</li>
+      <li><code>cutoff_sustain_level:</code>,</li>
+      <li><code>cutoff_env_curve:</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="version-201">Version 2.0.1</h1>
+
+<p><em>Tuesday 9th September, 2014</em>
+<a href="https://github.com/samaaron/sonic-pi/commits/v2.0.1">(view commits)</a></p>
+
+<ul>
+  <li>Fix recording functionality</li>
+  <li>Improve documentation content and layout</li>
+  <li>Close off OSC server from external clients</li>
+  <li>Add History, Contributors and Community pages to info window</li>
+  <li>Improve startup speed on OS X</li>
+  <li>Re-work and add to shortcuts for key actions:
+    <ul>
+      <li>on RP they are all <code>alt-*</code> prefixed</li>
+      <li>on OS X they are all <code>cmd-*</code> prefixed</li>
+    </ul>
+  </li>
+  <li>Improve highlighting of log messages (<code>cue</code>/<code>sync</code> messages are more clearly highlighted)</li>
+  <li>Log now communicates when a run has completed executing</li>
+  <li>Fix bug encountered when stopping threads in super fast loops (stopped comms with server)</li>
+</ul>
+
+<p><a name="v2.0"></a>
+## Version 2.0 - ‘Phoenix’</p>
+
+<p><em>Tuesday 2nd September, 2014</em>
+<a href="https://github.com/samaaron/sonic-pi/commits/v2.0.0">(view commits)</a></p>
+
+<ul>
+  <li>Complete rewrite since v1.0</li>
+  <li>Support for Live Coding - redefining behaviour whilst music is playing</li>
+  <li>New timing system - timing now guaranteed to be accurate</li>
+  <li>Many new synths</li>
+  <li>New chainable studio FX system</li>
+  <li>Support for sample playback</li>
+  <li>Inclusion of over 70 CC0 licensed samples from http://freesound.org</li>
+  <li>Support for controlling and modifying synth, fx and sample playback
+arguments after they have been triggered</li>
+  <li>Completely re-designed GUI</li>
+  <li>Help system with full documentation, tutorial and many examples</li>
+  <li>Record functionality (for recording performances/pieces)</li>
+  <li>Support for controlling system audio settings on RP</li>
+</ul>
+</div>
+<script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-41191925-2', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+  </body>
+  </html>

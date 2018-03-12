@@ -232,3 +232,68 @@
 			padding-left: 0;
 			margin-left: 0;
 		}
+
+
+#listingg  {
+
+    background-color: #d3d3d3;
+    background-color: #ededed;
+
+    text-align: left;
+    padding: 20px;
+    width: 30%;
+    height: 100%;
+    overflow-y: scroll;
+    display: inline-block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    -webkit-overflow-scrolling: touch;
+}
+
+#listingg a {
+    color: #282828;
+}
+
+#top-level a{
+    color: green;}
+background-color: red;
+
+}
+#listingg a:hover {
+
+
+}
+
+#contentss  {
+    float: right;
+font-size: 110%;
+    padding: 20px 2px 3px 0px;
+    width: 65%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x:hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+
+.copy-button {
+
+    float: right;
+    display: inline;
+
+    background-color: deeppink;
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    border:1px solid white;
+    cursor:pointer;
+    color:#ffffff;
+    font-size:0.8em;
+    padding: 5px;
+    margin: 0px;
+
+}

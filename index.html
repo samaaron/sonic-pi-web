@@ -1,14 +1,21 @@
 <!DOCTYPE HTML>
 <html>
   <head>
+
     <title>Sonic Pi - The Live Coding Music Synth for Everyone</title>
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="description" content="Welcome to the future of music. Sonic Pi lets you turn code into sounds. It is simple to learn, powerful enough for professional musicians and free to download." />
+    <meta name="description" content="Sonic Pi is a new kind of instrument for a new generation of musicians. It is simple to learn, powerful enough for live performances and free to download." />
     <meta name="keywords" content="live coding music code programming learn teach" />
 
     <link rel="stylesheet" href="js/circleplayer/css/not.the.skin.css">
     <link rel="stylesheet" href="js/circleplayer/circle.skin/circle.player.css">
+    <link rel="stylesheet" href="css/skel.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style-desktop.css" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+    <!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+
 
     <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
     <script src="js/jquery.min.js"></script>
@@ -26,16 +33,6 @@
     <script type="text/javascript">
       $(document).ready(function(){
 
-      /*
-      * Instance CirclePlayer inside jQuery doc ready
-      *
-      * CirclePlayer(jPlayerSelector, media, options)
-      *   jPlayerSelector: String - The css selector of the jPlayer div.
-      *   media: Object - The media object used in jPlayer("setMedia",media).
-      *   options: Object - The jPlayer options.
-      *
-      * Multiple instances must set the cssSelectorAncestor in the jPlayer options. Defaults to "#cp_container_1" in CirclePlayer.
-      */
       var myCirclePlayer = new CirclePlayer("#jquery_jplayer_1",
       {
       m4a: "media/audio/breakbeat.m4a",
@@ -96,15 +93,6 @@
 
       });
     </script>
-    <noscript>
-
-
-      <link rel="stylesheet" href="css/skel.css" />
-      <link rel="stylesheet" href="css/style.css" />
-      <link rel="stylesheet" href="css/style-desktop.css" />
-    </noscript>
-    <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
-    <!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
   </head>
   <body>
 
@@ -120,11 +108,10 @@
     <nav id="nav">
       <ul class="container">
 	<li><a href="#intro">Intro</a></li> |
-	<!-- <li><a href="#community">Community</a></li> | -->
-        <li><a href="#teachers">Teachers</a></li>|
+        <li><a href="#community">Community</a></li>|
 	<li><a href="#examples">Examples</a></li>|
-	<li><a href="#news">News</a></li>
-
+	<li><a href="#news">News</a></li>|
+        <li><a href="tutorial.html">Tutorial</a></li>
       </ul>
     </nav>
 
@@ -133,91 +120,128 @@
       <article class="container" id="intro">
 	<div class="row">
 	  <div class="4u">
-	    <span class="image fit"><img src="images/logo.png" alt="" /></span>
+	    <span class="image fit"><img src="media/images/home/logo.png" alt="" /></span>
 	  </div>
 
 	  <div class="8u">
-
 	    <header>
 	      <h1>Sonic Pi</h1>
-              <h2>The Live Coding Music Synth for Everyone.</h2>
+              <em><h2>The Live Coding Music Synth for Everyone.</h2></em>
             </header>
 
             <p>
+              Welcome to the <strong> future of music</strong>.
+              <br/>
+              <br/>
+
               <strong>Simple</strong> enough for computing and music lessons.<br/>
               <strong>Powerful</strong> enough for professional musicians.<br/>
-              <strong>Free </strong> to download with a friendly tutorial.<br/>
-
-              <br/>
-              <strong>Learn to code</strong> creatively by composing or performing <strong>music</strong> in an incredible range of styles from <strong>classical</strong>  to <strong>algorave</strong>.
+              <strong>Free </strong> to download with a friendly <a href="/tutorial.html">tutorial</a>.<br/>
             </p>
 
-            <h2><a href="funding.html">Please help - Sonic Pi needs funding to continue...</a></h2>
-            <br/>
+            <p>
+              <strong>Learn to code</strong> creatively by composing or performing <strong>music</strong> in an incredible range of styles from  <strong>classical</strong>  &amp;  <strong>jazz</strong> to <strong>EDM</strong>.
+            </p>
 
-            <h3> Brought to you by <a href="http://twitter.com/samaaron">Sam Aaron</a> and the Sonic Pi Core Team</h3>
-            <h3>v2.10.0 is available <strong>free</strong> for:</h3>
+            <h3> Brought to you by <a href="https://twitter.com/samaaron">Sam Aaron</a> and the Sonic Pi Core Team</h3>
 
+            <h3><strong>Sonic Pi is available free for:</strong></h3>
             <div id="downloads">
-              <a href="#rp" class="button medium scrolly">Raspberry Pi</a>
-              <a href="#mac" class="button medium scrolly">Mac OS X</a>
               <a href="#windows" class="button medium scrolly">Windows</a>
+              <a href="#mac" class="button medium scrolly">macOS</a>
+              <a href="#rp" class="button medium scrolly">Raspberry Pi</a>
               <a href="#debs" class="button medium scrolly">Linux</a>
-
             </div>
 
             <br/>
 
             <h4>Created at the <strong>University of Cambridge Computer Laboratory</strong><br/>
-              with kind support from the Raspberry Pi Foundation.<br/>
-              Sonic Pi is an <a href="http://github.com/samaaron/sonic-pi">Open Source Project</a> released under the MIT Licence.<br/>
-
+              with kind support from <a href="https://pi-top.com">pi-top</a> and <a href="https://patreon.com/samaaron"> generous Patreon supporters</a>.
+              <br/>
+              Sonic Pi is an <a href="https://github.com/samaaron/sonic-pi">Open Source Project</a> released under the MIT Licence.<br/>
             </h4>
-
-          	  </div>
+          </div>
 	</div>
       </article>
     </div>
+
+    <div class="wrapper style3">
+      <article id="creativeintro" class="container small">
+        <header>
+          <h1>Introducing Sonic Pi...</h1>
+        </header>
+        <div>
+
+          <div class="row">
+            <div class="6u">
+              <section >
+                <a href="/files/articles/Live-Coding-Education.pdf" target="_blank">
+                  <img src="media/images/home/live-coding-education.png" height="570" width="400"/>
+                </a>
+              </section >
+            </div>
+
+            <div class="6u">
+              <section >
+                <br/><br/>
+                <h3>
+                  Sonic Pi helps you engage students in Computing through music. Read how in the article <a href="/files/articles/Live-Coding-Education.pdf" target="_blank">'Live Coding Education'</a>
+                </h3>
+                <h3>Watch this introductory <a href="https://youtu.be/7sEMKXrRaAs?list=LLQB04t2hxSBVTjxpbIHdI-w" target="_blank">CAS TV interview</a> with Sonic Pi creator Sam Aaron.
+                </h3>
+                <iframe width="400" height="225" src="https://www.youtube.com/embed/7sEMKXrRaAs" frameborder="0" allowfullscreen></iframe>
+              </section >
+
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+
 
     <div class="wrapper style4">
       <article id="teachers">
         <header>
           <h2>Sonic Pi in the </h2>
-          <h1> Classroom</h1>
-          <p>Sonic Pi was specfically designed for and built in collaboration with teachers for use in the classroom.</p>
+          <h1> Computing Classroom</h1>
+          <p>Sonic Pi was specifically designed for and built in collaboration with teachers for use in the classroom.</p>
         </header>
         <div class="container">
           <div class="row">
 	    <div class="4u">
 	      <section class="dark-box style1">
-                <a href="http://www.raspberrypi.org/learning/sonic-pi-lessons/"><img src="media/images/music_note.png" height="190" width="190"/></a>
+                <a href="https://www.sonicpiliveandcoding.com"><img src="media/images/home/music_note.png" height="190" width="190"/></a>
 	        <h3>Music Live Coding</h3>
 
                 <p>
-                  Sonic Pi has been extended from a focus on Computing to Music Live Coding. We have also developed a <a href="http://www.sonicpiliveandcoding.com">scheme of work specifically for the Music curriculum</a>.
+                  Sonic Pi is a new kind of musical instrument which enables exciting new learning pathways in the classroom.
+
                 </p>
-
+		  <a href="https://www.sonicpiliveandcoding.com" class="button">Scheme of Work for Music Lessons</a>
 	      </section>
 	    </div>
 
 	    <div class="4u">
 	      <section class="dark-box style1">
-                <img src="media/images/code-border.png" height="190" width="190"/>
-	        <h3>Simple & Fun Computing</h3>
-	        <p>Sonic Pi comes with a scheme of work targetted for KS3 Computing developed in harmony with the new UK curriculum.</p>
-	        <a href="http://www.raspberrypi.org/learning/sonic-pi-lessons/" class="button">Get Scheme of Work</a>
-	      </section>
-	    </div>
-
-	    <div class="4u">
-	      <section class="dark-box style1">
-                <a href="http://www.raspberrypi.org/learning/sonic-pi-lessons/"><img src="media/images/blackboard.png" height="190" width="190"/></a>
-	        <h3>Designed for Teachers</h3>
+		<img src="media/images/home/blackboard.png" height="190" width="190"/>
+	        <h3>Classroom Ready</h3>
                 <p>
-                  Sonic Pi was designed, implemented and developed with extensive classroom trials in close collaboration with teachers. Sonic Pi is therefore ready for your classroom.
+                  Sonic Pi was designed, implemented and developed with extensive classroom trials in close collaboration with teachers.
                 </p>
+		<a href="/files/articles/Live-Coding-Education.pdf" class="button">Introduction for Teachers</a>
 	      </section>
 	    </div>
+
+	    <div class="4u">
+	      <section class="dark-box style1">
+                <a href="https://www.raspberrypi.org/learning/sonic-pi-lessons/"> <img src="media/images/home/code-border.png" height="190" width="190"/></a>
+	        <h3>Creative Computing</h3>
+	        <p>Sonic Pi comes with a scheme of work targetted for KS3 Computing developed in harmony with the new UK curriculum.</p>
+	        <a href="https://www.raspberrypi.org/learning/sonic-pi-lessons/" class="button">Scheme of Work for Computing Lessons</a>
+	      </section>
+	    </div>
+
+
           </div>
         </div>
         <footer>
@@ -226,23 +250,47 @@
       </article>
     </div>
 
+    <div class="wrapper style">
+      <article id="community" class="container small">
+
+        <header>
+          <h1>Welcome to our Community</h1>
+          <p>
+            Join the <strong>friendly</strong> Sonic Pi community and share your ideas and thoughts with other <strong>educators</strong>, <strong>musicians</strong> and <strong> live coders</strong>...
+          </p>
+        </header>
+        <div>
+          <div class="row">
+            <div class="12u">
+              <p>
+                <a href="https://in-thread.sonic-pi.net">
+                  <img src="media/images/home/in_thread_screen.png" id="in_thread_img" width="800"/>
+                </a>
+              </p>
+              <h3><a href="https://in-thread.sonic-pi.net">Come and join the conversation...</a></h3>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
 
 
-    <div class="wrapper style3">
+
+    <div class="wrapper style1">
       <article id="perf" class="container small">
 
         <header>
           <h1>Live Coding Performances</h1>
           <p>
             Sonic Pi is a <strong>new kind of musical instrument</strong>.<br/>
-            Watch how you can use it for live performances from ambient sets to Algoraves in nightclubs...
+            Watch how you can use it for live performances from ambient sets to dance music in nightclubs...
           </p>
         </header>
         <div>
           <div class="row">
             <div class="6u">
               <section >
-                <iframe src="http://player.vimeo.com/video/107897082?title=0&amp;byline=0&amp;portrait=0&amp;color=ff0179" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                <iframe src="https://player.vimeo.com/video/107897082?title=0&amp;byline=0&amp;portrait=0&amp;color=ff0179" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                 <h3> The Sonic Pi Live and Coding Project.</h3>
               </section>
             </div>
@@ -262,14 +310,14 @@
 
             <div class="6u">
               <section >
-                <iframe src="http://player.vimeo.com/video/132813228?title=0&amp;byline=0&amp;portrait=0&amp;color=ff0179" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                <iframe src="https://player.vimeo.com/video/132813228?title=0&amp;byline=0&amp;portrait=0&amp;color=ff0179" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                 <h3> Polycore - Sam Aaron & Ben Smith</h3>
               </section>
             </div>
 
             <div class="6u">
               <section>
-                <iframe src="http://player.vimeo.com/video/132104622?title=0&amp;byline=0&amp;portrait=0&amp;color=ff0179" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                <iframe src="https://player.vimeo.com/video/132104622?title=0&amp;byline=0&amp;portrait=0&amp;color=ff0179" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                 <h3> Phase Abstractions <br/> Coded by Sam Aaron Live at the NODE Festival in Frankfurt</h3>
               </section>
             </div>
@@ -307,7 +355,7 @@
     <div class="wrapper style3">
       <article id="demo" class="container small">
         <header>
-          <h1>Free Book</h1>
+          <h1>Free Sonic Pi Book</h1>
 
 
         <p>Sam Aaron, creator of Sonic Pi, has written this book to<br/> <strong>complement the built-in documentation</strong>.</p> <p>Master live loops, code drum breaks, compose your own melodies make random riffs and loops, learn to shape and sculpt sounds and much, much more... </p>
@@ -316,7 +364,7 @@
           <div class="row">
             <div class="12u">
               <a href="https://www.raspberrypi.org/magpi/issues/essentials-sonic-pi-v1/">
-                <img src="media/images/book.png" width="300"/>
+                <img src="media/images/home/book.png" width="300"/>
               </a>
               <h3><a href="https://www.raspberrypi.org/magpi/issues/essentials-sonic-pi-v1/">Download "Code Music with Sonic Pi" Now!</a></h3>
             </div>
@@ -743,7 +791,7 @@
 	<footer>
 	  <p>What are you waiting for? Get yourself a copy of Sonic Pi for:</p>
 	  <a href="#rp" class="button medium scrolly">Raspberry Pi</a>
-	  <a href="#mac" class="button medium scrolly">Mac OS X</a>
+	  <a href="#mac" class="button medium scrolly">macOS</a>
 	  <a href="#windows" class="button medium scrolly">Windows</a>
           <a href="#debs" class="button medium scrolly">Linux</a>
 	</footer>
@@ -755,40 +803,110 @@
     <div class="wrapper style3">
       <article id="news">
         <header>
-          <h2>What's Happening</h2>
+          <h2>What's Happening with</h2>
+          <h1>Sonic Pi</h1>
           <p>Here's a taster of some of the exciting things happening in the Sonic Pi world...</p>
 
         </header>
+
         <div class="container">
 
           <div class="row">
 
-            <div class="4u">
-              <article class="box style2">
-	        <a href="http://www.rollingstone.com/music/live-reviews/moogfest-2016-was-it-actually-the-future-of-music-20160523?page=2" class="image featured"><img src="media/images/community/rollingstone.png" alt="" /></a>
-	        <h3><a href="http://www.rollingstone.com/music/live-reviews/moogfest-2016-was-it-actually-the-future-of-music-20160523?page=2">Rolling Stone Review</a></h3>
-	        <p>Sam Aaron performed with Sonic Pi at Moogfest 2016. Rolling Stone featured his performance in their <a href="http://www.rollingstone.com/music/live-reviews/moogfest-2016-was-it-actually-the-future-of-music-20160523?page=2">review of the festival</a> and said it <em>"transcended the present"</em>.</p>
-	      </article>
-	    </div>
-
 
             <div class="4u">
-
-
-
-
 	      <article class="box style2">
-	        <a href="https://aimxhaisse.com/aerodynamic-en.html" class="image featured"><img src="media/images/community/Red_daft_punk.PNG" alt="Daft Punk" /></a>
-	        <h3><a href="https://aimxhaisse.com/aerodynamic-en.html">Daft Punk in code</a></h3>
-	        <p> Sébastien Rannou has published a tutorial on how he live coded his fabulous <a href="https://aimxhaisse.com/aerodynamic-en.html">cover of Aerodynaic</a> by Daft Punk.</p>
+	        <a href="http://www.musiccommission.org.uk" class="image featured"><img src="media/images/home/news/music_commission.jpg" alt="The Music Commission" /></a>
+	        <h3><a href="http://www.musiccommission.org.uk">The Music Commission</a></h3>
+	        <p>Sonic Pi is represented by Sam Aaron on The Music Commission panel, a new enquiry launched by ABSRM exploring how to better sustain &amp; support progress &amp; progression in learning music. </p>
 	      </article>
 	    </div>
 
             <div class="4u">
+	      <article class="box style2">
+	        <a href="https://www.thenakedscientists.com/articles/interviews/creating-code-make-music" class="image featured"><img src="media/images/home/news/naked_scientists.png" alt="Naked Scientists" /></a>
+	        <h3><a href="https://www.thenakedscientists.com/articles/interviews/creating-code-make-music">The Naked Scientists</a></h3>
+	        <p>The wonderful Naked Scientists covered Sonic Pi in an interview which was broadcast live on BBC radio and is available to listen and read <a href="https://www.thenakedscientists.com/articles/interviews/creating-code-make-music">here</a>. </p>
+	      </article>
+	    </div>
+
+
+
+            <div class="4u">
               <article class="box style2">
-	        <a href="https://astro-pi.org/coding-challenges/sonic-pi-music/" class="image featured"><img src="media/images/community/iss.jpg" alt="The International Space Station" /></a>
-	        <h3><a href="https://astro-pi.org/coding-challenges/sonic-pi-music/">Sonic Pi Space Competition</a></h3>
-	        <p>Enter this exciting once-in-a-lifetime <a href="https://astro-pi.org/coding-challenges/sonic-pi-music/">competion</a> to get your Sonic Pi music played onboard the International Space Station by UK astronaut Tim Peake. </p>
+	        <a href="https://www.thebigbangfair.co.uk" class="image featured"><img src="media/images/home/news/big_bang.jpg" alt="The Big Bang Fair" /></a>
+                <h3><a href="https://www.thebigbangfair.co.uk">The Big Bang Fair 2018</a></h3>
+	        <p>The Big Bang Fair is the UK's largest celebration of STEM for young people. The Sonic Pi Band will perform a series of shows demonstrating how to live code your own band. </p>
+	      </article>
+	    </div>
+
+
+
+          </div>
+
+
+
+          <div class="row">
+
+            <div class="4u">
+	      <article class="box style2">
+	        <a href="http://sonic-pi.mehackit.org" class="image featured"><img src="media/images/home/news/mehackit_kokoa.png" alt="Convo" /></a>
+	        <h3><a href="http://sonic-pi.mehackit.org">Kokoa Certified Resources</a></h3>
+	        <p>The incredible <a href="http://mehackit.org">Mehackit</a> Sonic Pi creative coding resource has been certified by the Finnish Education Standard Kakoa for its educational quality. </p>
+	      </article>
+	    </div>
+
+
+            <div class="4u">
+	      <article class="box style2">
+	        <a href="https://www.royalalberthall.com/tickets/events/2019/convo-2019/" class="image featured"><img src="media/images/home/news/convo.jpg" alt="" /></a>
+	        <h3><a href="https://www.royalalberthall.com/tickets/events/2019/convo-2019/">Royal Albert Hall : Convo</a></h3>
+	        <p>Sonic Pi is an Education Partner for Convo, an ambitious new work at the Royal Albert Hall featuring 1,000 young instrumentalists &#38; singers combining traditional instruments &#38; code. </p>
+	      </article>
+	    </div>
+
+
+            <div class="4u">
+              <article class="box style2">
+	        <a href="http://finland100africa.fi" class="image featured"><img src="media/images/home/news/codebus.png" alt="" /></a>
+	        <h3><a href="http://finland100africa.fi">Codebus Africa</a></h3>
+	        <p>In 2017, African and Finnish tech and education innovators collaborated to use Sonic Pi to deliver creative coding workshops engaging almost 2000 children in 10 African countries.</p>
+	      </article>
+	    </div>
+
+
+
+          </div>
+
+
+
+
+
+          <div class="row">
+
+            <div class="4u">
+	      <article class="box style2">
+	        <a href="https://opensource.googleblog.com/2017/03/the-latest-round-of-google-open-source.html" class="image featured"><img src="media/images/home/news/google.png" alt="Google Logo" /></a>
+	        <h3><a href="https://opensource.googleblog.com/2017/03/the-latest-round-of-google-open-source.html">Google Open Source Winner</a></h3>
+	        <p>Google have announced Sonic Pi as one of a number of projects they either use or think are important. </p>
+	      </article>
+	    </div>
+
+
+            <div class="4u">
+	      <article class="box style2">
+	        <a href="http://www.musiceducationexpo.co.uk/awards/2015-finalists/" class="image featured"><img src="media/images/home/news/mt-awardlogo.png" alt="" /></a>
+	        <h3><a href="http://www.musiceducationexpo.co.uk/awards/2015-finalists/">Sonic Pi is a Music Teacher Award finalist</a></h3>
+	        <p>Sonic Pi has been listed as a finalist for the <a href="http://www.musiceducationexpo.co.uk/awards/2015-finalists/">Music Teacher Best Music Education Product Award</a> alongside music instrument manufacturers Boss &#38; Korg. </p>
+	      </article>
+	    </div>
+
+
+            <div class="4u">
+              <article class="box style2">
+	        <a href="http://www.rollingstone.com/music/live-reviews/moogfest-2016-was-it-actually-the-future-of-music-20160523?page=2" class="image featured"><img src="media/images/home/news/rollingstone.png" alt="" /></a>
+	        <h3><a href="https://www.rollingstone.com/music/live-reviews/moogfest-2016-was-it-actually-the-future-of-music-20160523?page=2">Rolling Stone Review</a></h3>
+	        <p>Sam Aaron performed with Sonic Pi at Moogfest 2016. Rolling Stone featured his performance in their <a href="http://www.rollingstone.com/music/live-reviews/moogfest-2016-was-it-actually-the-future-of-music-20160523?page=2">review of the festival</a> and said it <em>"transcended the present"</em>.</p>
 	      </article>
 	    </div>
 
@@ -800,10 +918,18 @@
           <div class="row">
 
             <div class="4u">
+              <article class="box style2">
+	        <a href="https://astro-pi.org/coding-challenges/sonic-pi-music/" class="image featured"><img src="media/images/home/news/iss.jpg" alt="The International Space Station" /></a>
+	        <h3><a href="https://astro-pi.org/coding-challenges/sonic-pi-music/">Sonic Pi Space Competition</a></h3>
+	        <p>Enter this exciting once-in-a-lifetime <a href="https://astro-pi.org/coding-challenges/sonic-pi-music/">competition</a> to get your Sonic Pi music played onboard the International Space Station by UK astronaut Tim Peake. </p>
+	      </article>
+	    </div>
 
+
+            <div class="4u">
 	      <article class="box style2">
-	        <a href="http://www.bbc.co.uk/programmes/p031dq3j" class="image featured"><img src="media/images/community/mistajam.jpg" alt="" /></a>
-	        <h3><a href="http://www.bbc.co.uk/programmes/p031dq3j">CBBC Ten Pieces Masterclass</a></h3>
+	        <a href="https://www.bbc.co.uk/programmes/p031dq3j" class="image featured"><img src="media/images/home/news/mistajam.jpg" alt="" /></a>
+	        <h3><a href="https://www.bbc.co.uk/programmes/p031dq3j">CBBC Ten Pieces Masterclass</a></h3>
 	        <p>Radio 1 DJ MistaJam and Live Coder Sam Aaron compose a piece of music using Sonic Pi, inspired by Bizet's 'Carmen'</p>
 	      </article>
 	    </div>
@@ -811,46 +937,29 @@
 
 
 
-
-
             <div class="4u">
 	      <article class="box style2">
-	        <a href="http://www.musiceducationexpo.co.uk/awards/2015-finalists/" class="image featured"><img src="media/images/community/mt-awardlogo.png" alt="" /></a>
-	        <h3><a href="http://www.musiceducationexpo.co.uk/awards/2015-finalists/">Sonic Pi is a Music Teacher Award finalist</a></h3>
-	        <p>Sonic Pi has been listed as a finalist for the <a href="http://www.musiceducationexpo.co.uk/awards/2015-finalists/">Music Teacher Best Music Education Product Award</a> alongside music instrument manufacturers Boss and Korg. </p>
+	        <a href="https://aimxhaisse.com/aerodynamic-en.html" class="image featured"><img src="media/images/home/news/Red_daft_punk.PNG" alt="Daft Punk" /></a>
+	        <h3><a href="https://aimxhaisse.com/aerodynamic-en.html">Daft Punk in code</a></h3>
+	        <p> Sébastien Rannou has published a tutorial on how he live coded his fabulous <a href="https://aimxhaisse.com/aerodynamic-en.html">cover of Aerodynamic</a> by Daft Punk.</p>
 	      </article>
 	    </div>
-
-                        <div class="4u">
-	      <article class="box style2">
-	        <a href="https://www.raspberrypi.org/magpi/" class="image featured"><img src="media/images/community/magpi.jpg" alt="" /></a>
-	        <h3><a href="https://www.raspberrypi.org/magpi/">New MagPi Series</a></h3>
-	        <p>The MagPi magazine now features a regular piece by Sam Aaron introducing readers to new features in Sonic Pi. You can either buy the printed magazine or download the <a href="https://www.raspberrypi.org/magpi/">free PDF</a>.</p>
-	      </article>
-	    </div>
-
-
           </div>
 
 
 
-
           <div class="row">
-
-
-
-
             <div class="4u">
 	      <article class="box style2">
-	        <a href="http://www.bbc.co.uk/newsround/30151730" class="image featured"><img src="media/images/community/newsround.png" alt="" /></a>
-	        <h3><a href="http://www.bbc.co.uk/newsround/30151730">Sonic Pi featured on CBBC Newsround</a></h3>
-	        <p>Sonic Pi was featured on the UK national children's news programme <a href="http://www.bbc.co.uk/newsround/30151730">CBBC Newsround</a> - with presenter Jenny Lawrence discovering Live Coding for the first time.</p>
+	        <a href="https://www.bbc.co.uk/newsround/30151730" class="image featured"><img src="media/images/home/news/newsround.png" alt="" /></a>
+	        <h3><a href="https://www.bbc.co.uk/newsround/30151730">Sonic Pi featured on CBBC Newsround</a></h3>
+	        <p>Sonic Pi was featured on the UK national children's news programme <a href="https://www.bbc.co.uk/newsround/30151730">CBBC Newsround</a> - with presenter Jenny Lawrence discovering Live Coding for the first time.</p>
 	      </article>
 	    </div>
 
             <div class="4u">
 	      <article class="box style2">
-	        <a href="https://vimeo.com/110416910" class="image featured"><img src="media/images/community/sonic-dreams.png" alt="" /></a>
+	        <a href="https://vimeo.com/110416910" class="image featured"><img src="media/images/home/news/sonic-dreams.png" alt="" /></a>
 	        <h3><a href="https://vimeo.com/user33572687">Sonic Pi: Live & Coding Pop Pi Videos Launched</a></h3>
 	        <p>The Sonic Pi: Live & Coding project has launched <a href="https://vimeo.com/user33572687"> a series of 10 "Pop Pi" music videos</a> created by artists using Sonic Pi. <p>
 	      </article>
@@ -858,9 +967,9 @@
 
 	    <div class="4u">
 	      <article class="box style2">
-	        <a href="http://www.raspberrypi.org/blog/page/2/#sonic-pi-live-summer-school" class="image featured"><img src="media/images/community/summerschool.jpg" alt="" /></a>
-	        <h3><a href="http://www.raspberrypi.org/blog/page/2/#sonic-pi-live-summer-school">Sonic Pi Live & Coding - Summer School</a></h3>
-	        <p>Artists Juneau Projects <a href="http://www.raspberrypi.org/blog/page/2/#sonic-pi-live-summer-school">write about the recent Sonic Pi Live & Coding Summer School</a> which involved 60 children aged 10-14 learning to code and perform on stage at   Cambridge Junction. </p>
+	        <a href="https://www.raspberrypi.org/blog/page/2/#sonic-pi-live-summer-school" class="image featured"><img src="media/images/home/news/summerschool.jpg" alt="" /></a>
+	        <h3><a href="https://www.raspberrypi.org/blog/page/2/#sonic-pi-live-summer-school">Sonic Pi Live & Coding - Summer School</a></h3>
+	        <p>Artists Juneau Projects <a href="https://www.raspberrypi.org/blog/page/2/#sonic-pi-live-summer-school">write about the recent Sonic Pi Live & Coding Summer School</a> which involved 60 children aged 10-14 learning to code and perform on stage at   Cambridge Junction. </p>
 	      </article>
 	    </div>
           </div>
@@ -900,30 +1009,31 @@
           <div class="row">
             <div class="4u">
 	      <section class="box style1">
-                <img src="media/images/rpi-logo.png"/>
-	        <h3>Pre-installed on Raspbian Jessie</h3>
-	        <p>Sonic Pi is already pre-installed on Raspbian Jessie - the SD card image recommended by the Raspberry Pi Foundation.</p>
+                <img src="media/images/home/download/rpi-logo.png"/>
+	        <h3>Pre-installed on Raspbian Stretch</h3>
+	        <p>Sonic Pi is already pre-installed on Raspbian Stretch - the SD card image recommended by the Raspberry Pi Foundation.</p>
 	      </section>
 	    </div>
 
             <div class="4u">
 	      <section class="box style1">
-	        <a href="files/releases/v2.10.0/Sonic-Pi-for-RPi-Jessie-v2.10.0.tgz">
-                  <img src="media/images/archive_tgz.png"/>
+                  <a href="files/releases/v3.0.1/sonic-pi_1_3.0.1-armhf.deb">
+                  <img src="media/images/home/download/archive_tgz.png"/>
                 </a>
-                <h3>Manual Download for Raspbian Jessie</h3>
+                <h3>Manual Download for Raspbian Stretch</h3>
 
                 <div style="overflow-y:hidden;box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0.15), 0px 2px 3px 0px rgba(0,0,0,0.1); padding: 5px">
                   <code>
-                    <pre>tar -xvzf Sonic-Pi-for-RPi-Jessie-v2.10.0.tgz
-./sonic-pi-v2.10.0/bin/sonic-pi</pre></code></div><br/>
-                <a href="files/releases/v2.10.0/Sonic-Pi-for-RPi-Jessie-v2.10.0.tgz" class="button medium scrolly">Download</a>
+                    <pre>sudo dpkg -i sonic-pi_1_3.0.1-armhf.deb
+sudo apt-get install -f
+</pre></code></div><br/>
+                <a href="files/releases/v3.0.1/sonic-pi_1_3.0.1-armhf.deb" class="button medium scrolly">Download</a>
 
               </section>
             </div>
 	    <div class="4u">
 	      <section class="box style1">
-                <img src="media/images/box3.png"/>
+                <img src="media/images/home/download/box3.png"/>
 
 	        <h3>Raspbian Package Manager</h3>
                 <p>Easily keep your Sonic Pi up-to-date via the Raspbian Package Manager:</p>
@@ -954,28 +1064,29 @@
 
 	    <div class="4u">
 	      <section class="box style1">
-                <img src="media/images/unibody_windows.png" />
+                <img src="media/images/home/download/unibody_windows.png" />
 
 	        <h3>Sonic Pi Portable</h3>
-	        <p>A portable version that will self-extract and run from a USB stick or Windows folder. No installation necessary.</p>
-                <a href="files/releases/v2.10.0/Sonic-Pi-for-Win-Portable-v2.10.0.paf.exe" class="button">Download Portable App</a>
+	        <p>A portable version that will self-extract and run from a USB stick or folder. No installation necessary.</p>
+                <a href="files/releases/v3.1.0/Sonic-Pi-for-Win-Portable-v3.1.0.paf.exe" class="button">Download Portable App</a>
 	      </section>
 	    </div>
 
             <div class="4u">
 	      <section class="box style1">
-                <img src="media/images/generic_pc.png" />
+                <img src="media/images/home/download/generic_pc.png" />
 	        <h3>Sonic Pi for Windows</h3>
-	        <p>Sonic Pi v2.10.0 is compatible with Windows and works well with all versions of Windows from 7 to 10.</p>
+	        <p>Sonic Pi v3.1.0 is compatible with Windows and works well with all versions of Windows from 7 to 10.</p>
+		<img src="media/images/home/download/double-arrow.png" height="77" width="168" />
 	      </section>
 	    </div>
 
 	    <div class="4u">
 	      <section class="box style1">
-                <img src="media/images/windows.png" />
+                <img src="media/images/home/download/windows.png" />
 	        <h3>Windows Installer</h3>
 	        <p>Sonic Pi is available as a self-contained MSI installer for you to install on your machine or network.</p>
-	        <a href="files/releases/v2.10.0/Sonic-Pi-for-Win-v2.10.0.msi" class="button">Download MSI Installer</a>
+	        <a href="files/releases/v3.1.0/Sonic-Pi-for-Win-v3.1.0.msi" class="button">Download MSI Installer</a>
 	      </section>
 	    </div>
 
@@ -1000,14 +1111,14 @@
           <div class="row">
 	    <div class="4u">
 	      <section class="box style1">
-                <img src="media/images/penguinheadphones.png" />
+                <img src="media/images/home/download/penguinheadphones.png" />
 	        <h3>Built for Linux</h3>
 	        <p>You can <a href="https://github.com/samaaron/sonic-pi/blob/master/INSTALL-LINUX.md">compile Sonic Pi from source</a>, but there are binaries ready for use in your Debian and Ubuntu package repositories, thanks to the Debian Multimedia packagers team.</p>
 	      </section>
 	    </div>
 	    <div class="4u">
 	      <section class="box style1">
-                <img src="media/images/debpackage.png" />
+                <img src="media/images/home/download/debpackage.png" />
 	        <h3>Sonic Pi .deb packages</h3>
 	        <p>The <a href="https://packages.debian.org/source/sid/sonic-pi">Sonic Pi package</a> is in Debian Sid (Unstable), Debian Stretch (Testing) and Ubuntu 16.04. To install, just enter:</p>
           <code>sudo apt-get update<br/>
@@ -1016,7 +1127,7 @@
 	    </div>
 	    <div class="4u">
 	      <section class="box style1">
-                <img src="media/images/ubuntu.png" />
+                <img src="media/images/home/download/ubuntu.png" />
 	        <h3>Always up to date</h3>
 	        <p>The <a href="https://launchpad.net/~sonic-pi/+archive/ubuntu/ppa">Sonic Pi Ubuntu PPA repository</a> always contains the latest stable release for Ubuntu 14.04 "Trusty Tahr", 15.10 "Wily Werewolf" and 16.04 "Xenial Xerus".
           Just follow the <i>&quot;Adding this PPA to your system&quot;</i> instructions <a href="https://launchpad.net/~sonic-pi/+archive/ubuntu/ppa">there</a>.</p>
@@ -1035,32 +1146,32 @@
       <article id="mac">
         <header>
           <h2>Get Sonic Pi for</h2>
-          <h1> Mac OS X</h1>
+          <h1> macOS</h1>
           <p>Use the full power of your Mac to take Sonic Pi to the next level.</p>
         </header>
         <div class="container">
           <div class="row">
 	    <div class="4u">
 	      <section class="box style1">
-                <img src="media/images/apple.png" />
+                <img src="media/images/home/download/apple.png" />
 	        <h3>Built for Apple</h3>
-	        <p>Sonic Pi has been built as a self-contained OS X app ready for you to download and launch.</p>
+	        <p>Sonic Pi has been built as a self-contained macOS app ready for you to download and launch.</p>
                 <p>Just ensure you give Sonic Pi permission to run in the Security Preferences.</p>
 	      </section>
 	    </div>
 	    <div class="4u">
 	      <section class="box style1">
-                <img src="media/images/hd.png" />
-	        <h3>Sonic Pi for OS X</h3>
-	        <p>Download Sonic Pi v2.10.0 for OS X here.</p>
-                <a href="/files/releases/v2.10.0/Sonic-Pi-for-Mac-v2.10.0.dmg" class="button">Download</a>
+                <img src="media/images/home/download/hd.png" />
+	        <h3>Sonic Pi for macOS</h3>
+	        <p>Download Sonic Pi v3.1.0 for macOS here.</p>
+                <a href="/files/releases/v3.1.0/Sonic-Pi-for-Mac-v3.1.0.dmg" class="button">Download</a>
 	      </section>
 	    </div>
 	    <div class="4u">
 	      <section class="box style1">
-                <img src="media/images/64bit.png" />
+                <img src="media/images/home/download/64bit.png" />
 	        <h3>Compiled for 64 bit</h3>
-	        <p>Compiled for 64 bit architectures, Sonic Pi has been tested to run on OS X Lion through to El Capitan.</p>
+	        <p>Compiled for 64 bit architectures, Sonic Pi has been tested to run on OS X Mountain Lion through to macOS High Sierra.</p>
 	      </section>
 	    </div>
           </div>
@@ -1074,10 +1185,10 @@
     <nav id="nav3">
       <ul class="container">
 
-        <li><a href="http://twitter.com/sonic_pi" class="icon fa-twitter"><span class="label">Twitter</span></a></li> |
+        <li><a href="https://twitter.com/sonic_pi" class="icon fa-twitter"><span class="label">Twitter</span></a></li> |
         <li><a href="https://www.facebook.com/SonicPi" class="icon fa-facebook"><span class="label">Facebook</span></a></li> |
         <li><a href="https://plus.google.com/106291117871372955043" rel="publisher"  class="icon fa-google-plus"> <span class="label">Google+</span></a></li> |
-        <li><a href="http://github.com/samaaron/sonic-pi" class="icon fa-github"><span class="label">Github</span></a></li>
+        <li><a href="https://github.com/samaaron/sonic-pi" class="icon fa-github"><span class="label">Github</span></a></li>
       </ul>
     </nav>
 
